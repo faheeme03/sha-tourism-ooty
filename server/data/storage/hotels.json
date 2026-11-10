@@ -1,0 +1,60 @@
+[
+  {
+    "id": "hotel-nilgiri-heritage",
+    "name": "Nilgiri Heritage Tea Estate Resort",
+    "location": "Fern Hill / Lovedale Road, Ooty",
+    "category": "Heritage & Luxury",
+    "startingPrice": 4500,
+    "priceUnit": "per night",
+    "rating": 4.9,
+    "reviewsCount": 76,
+    "isAwaitingDocument": true,
+    "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
+    "description": "Nestled amidst 30 acres of private rolling tea plantations, this colonial-era heritage retreat offers timeless luxury, crackling fireplaces, and tea garden views.",
+    "amenities": [
+      "Fireplace in all rooms",
+      "Panoramic Tea Garden Views",
+      "Multi-Cuisine Restaurant",
+      "Free High-Speed Wi-Fi"
+    ],
+    "roomTypes": [
+      {
+        "name": "Colonial Deluxe Room",
+        "price": 4500
+      },
+      {
+        "name": "Heritage Estate Suite",
+        "price": 6800
+      }
+    ]
+  },
+  {
+    "id": "hotel-pine-mist-cottages",
+    "name": "Pine Mist Valley Cottages",
+    "location": "Doddabetta Road, Ooty",
+    "category": "Boutique Hill Cottage",
+    "startingPrice": 3200,
+    "priceUnit": "per night",
+    "rating": 4.8,
+    "reviewsCount": 54,
+    "isAwaitingDocument": true,
+    "image": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80",
+    "description": "Charming wooden cottages surrounded by towering pine trees and misty morning clouds.",
+    "amenities": [
+      "Wooden Finished Interior",
+      "Room Heaters",
+      "Balcony Valley Views",
+      "In-house Kitchen"
+    ],
+    "roomTypes": [
+      {
+        "name": "Mist View Wooden Cottage",
+        "price": 3200
+      },
+      {
+        "name": "Family Duplex Suite",
+        "price": 5200
+      }
+    ]
+  }
+]

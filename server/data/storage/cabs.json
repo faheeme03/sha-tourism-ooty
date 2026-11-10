@@ -1,0 +1,26 @@
+[
+  {
+    "id": "cab-sedan-dzire",
+    "name": "Sedan (Swift Dzire / Toyota Etios)",
+    "category": "Sedan",
+    "capacity": "4 Passengers + 1 Driver",
+    "luggage": "2 Large Bags + 2 Small",
+    "acType": "AC / Climate Controlled",
+    "pricingNote": "Starting from ₹2,200/day for Ooty local sightseeing",
+    "isAwaitingDocument": true,
+    "image": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80",
+    "bestFor": "Couples, small families & solo travelers"
+  },
+  {
+    "id": "cab-suv-innova",
+    "name": "Premium SUV (Toyota Innova / Crysta)",
+    "category": "Premium SUV",
+    "capacity": "6-7 Passengers + 1 Driver",
+    "luggage": "4 Large Bags + 3 Small",
+    "acType": "Dual AC Front & Rear",
+    "pricingNote": "Starting from ₹3,500/day for Ooty-Coonoor tour",
+    "isAwaitingDocument": true,
+    "image": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80",
+    "bestFor": "Families, honeymooners wanting maximum comfort"
+  }
+]
