@@ -1,77 +1,61 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { 
-  Send, MessageSquare, CheckCircle2, AlertCircle, Calendar, 
-  Users, Hotel, Car, FileText, Phone, Mail, User, Sparkles, Clock, ShieldCheck 
+  Send, MessageSquare, CheckCircle2, Calendar, 
+  Users, Hotel, Car, ArrowRight, ShieldCheck 
 } from 'lucide-react';
 import SectionHeader from '../components/common/SectionHeader';
-import { TOUR_PACKAGES, HOTELS_RESORTS, CAB_SERVICES } from '../data/placeholderData';
+import { TOUR_PACKAGES } from '../data/placeholderData';
 import { BUSINESS_CONFIG, buildWhatsAppUrl, getCustomTripWhatsAppMessage } from '../config/whatsapp';
 
 export default function BookingEnquiryPage() {
   const [searchParams] = useSearchParams();
 
-  // Form State
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     email: '',
     checkIn: '',
-    checkOut: '',
-    guests: '2 Guests',
+    guests: '2 Guests (Couple)',
     selectedPackage: '',
     hotelRequired: true,
-    hotelCategory: 'Resort / Tea Estate Stay',
     cabRequired: true,
-    cabType: 'Dedicated Private Sedan',
     additionalNotes: ''
   });
 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submittedData, setSubmittedData] = useState(null);
-  const [apiError, setApiError] = useState(null);
 
-  // Pre-fill from URL query params
   useEffect(() => {
     const pkgName = searchParams.get('packageName');
     const hotelName = searchParams.get('hotelName');
     const cabName = searchParams.get('cabName');
-    const destination = searchParams.get('destination');
     const checkInParam = searchParams.get('checkIn');
-    const checkOutParam = searchParams.get('checkOut');
     const guestsParam = searchParams.get('guests');
 
     setFormData((prev) => ({
       ...prev,
       selectedPackage: pkgName || prev.selectedPackage,
       checkIn: checkInParam || prev.checkIn,
-      checkOut: checkOutParam || prev.checkOut,
       guests: guestsParam || prev.guests,
-      additionalNotes: destination 
-        ? `Interested in visiting ${destination}. ` 
-        : hotelName 
-          ? `Interested in booking stay at ${hotelName}. `
-          : cabName
-            ? `Interested in hiring ${cabName}. `
-            : prev.additionalNotes
+      additionalNotes: hotelName 
+        ? `Interested in ${hotelName}. `
+        : cabName 
+          ? `Interested in ${cabName}. `
+          : prev.additionalNotes
     }));
   }, [searchParams]);
 
   const validate = () => {
     const errs = {};
-    if (!formData.name.trim()) errs.name = "Full name is required";
+    if (!formData.name.trim()) errs.name = "Please enter your name";
     if (!formData.phone.trim()) {
-      errs.phone = "Mobile / WhatsApp number is required";
+      errs.phone = "Mobile or WhatsApp number required";
     } else if (!/^[0-9+ -]{8,15}$/.test(formData.phone.trim())) {
-      errs.phone = "Enter a valid 10-digit mobile number";
+      errs.phone = "Enter a valid 10-digit number";
     }
-    if (!formData.email.trim()) {
-      errs.email = "Email address is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email.trim())) {
-      errs.email = "Enter a valid email address";
-    }
-    if (!formData.checkIn) errs.checkIn = "Expected travel date is required";
+    if (!formData.checkIn) errs.checkIn = "Please choose a travel date";
 
     setErrors(errs);
     return Object.keys(errs).length === 0;
@@ -82,7 +66,6 @@ export default function BookingEnquiryPage() {
     if (!validate()) return;
 
     setIsSubmitting(true);
-    setApiError(null);
 
     const payload = {
       ...formData,
@@ -92,23 +75,17 @@ export default function BookingEnquiryPage() {
     };
 
     try {
-      // Post to backend API
-      const res = await fetch('/api/enquiries', {
+      await fetch('/api/enquiries', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
-
-      if (!res.ok) {
-        // Fallback for standalone demo mode: still succeed locally
-        console.warn("Backend API not reachable or returned non-200. Using client-side state.");
-      }
     } catch (err) {
-      console.warn("API request caught error, continuing with client confirmation", err);
+      console.warn("Backend API call fallback", err);
     } finally {
       setIsSubmitting(false);
       setSubmittedData(payload);
-      window.scrollTo({ top: 300, behavior: 'smooth' });
+      window.scrollTo({ top: 200, behavior: 'smooth' });
     }
   };
 
@@ -119,9 +96,8 @@ export default function BookingEnquiryPage() {
       phone: submittedData.phone,
       email: submittedData.email,
       checkIn: submittedData.checkIn,
-      checkOut: submittedData.checkOut,
       guests: submittedData.guests,
-      interest: submittedData.selectedPackage || "Custom Nilgiri Tour",
+      interest: submittedData.selectedPackage || "Ooty Holiday",
       hotelRequired: submittedData.hotelRequired,
       cabRequired: submittedData.cabRequired,
       additionalNotes: submittedData.additionalNotes
@@ -130,88 +106,73 @@ export default function BookingEnquiryPage() {
   };
 
   return (
-    <div className="pt-28 pb-20 bg-[#FBF9F5] min-h-screen">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="pt-24 pb-20 bg-[#faf9f6] min-h-screen">
+      <div className="max-w-2xl mx-auto px-4 sm:px-6">
         
         <SectionHeader
-          badge="Booking & Custom Trip Planner"
-          title="Plan Your Dream Ooty Holiday"
-          subtitle="Tell us your holiday vision. We will curate the ideal accommodation, reliable hill transportation, and day-wise sightseeing plan."
+          badge="Simple Booking & Enquiry"
+          title="Plan Your Ooty Trip"
+          subtitle="Share your travel dates and requirements. We will prepare your itinerary and send it directly on WhatsApp."
         />
 
-        {/* Success Confirmation State */}
         {submittedData ? (
-          <div className="bg-white rounded-3xl p-8 sm:p-12 shadow-2xl border border-emerald-600/30 text-center space-y-6 animate-in zoom-in-95 duration-300">
-            <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center mx-auto shadow-md">
-              <CheckCircle2 className="w-10 h-10 text-emerald-600" />
+          <div className="bg-white rounded-2xl p-8 sm:p-10 border border-stone-200 text-center space-y-5 shadow-xs">
+            <div className="w-12 h-12 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center mx-auto">
+              <CheckCircle2 className="w-6 h-6" />
             </div>
 
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#C5A059] block mb-1">
-                Enquiry Reference: {submittedData.enquiryId}
+              <span className="text-[11px] font-bold text-stone-400 uppercase tracking-wider block">
+                Ref: {submittedData.enquiryId}
               </span>
-              <h3 className="text-3xl font-serif font-black text-slate-900">
-                Enquiry Successfully Received!
+              <h3 className="text-2xl font-serif font-black text-stone-900 mt-1">
+                Enquiry Received!
               </h3>
-              <p className="mt-3 text-slate-600 text-sm max-w-lg mx-auto leading-relaxed">
-                Thank you, <strong>{submittedData.name}</strong>! Your travel details have been sent to the Star Tourism team. A tour curator will review your dates and reach out with verified options.
+              <p className="text-xs sm:text-sm text-stone-600 mt-2 leading-relaxed">
+                Thank you, <strong>{submittedData.name}</strong>. Our Ooty travel desk has received your request and will contact you promptly.
               </p>
             </div>
 
-            {/* Crucial transparency disclaimer */}
-            <div className="p-4 rounded-2xl bg-amber-50 border border-amber-200 text-amber-900 text-xs sm:text-sm text-left max-w-xl mx-auto flex items-start gap-3">
-              <AlertCircle className="w-5 h-5 text-amber-700 shrink-0 mt-0.5" />
-              <div>
-                <p className="font-bold">Reservation Notice:</p>
-                <p className="mt-0.5 text-amber-800/90 leading-relaxed">
-                  Submitting an enquiry registers your trip request and initiates availability checks. Final confirmation and room vouchers are issued after date confirmation with Star Tourism.
-                </p>
-              </div>
-            </div>
-
-            {/* WhatsApp Direct Action Button */}
-            <div className="pt-4 space-y-3 max-w-md mx-auto">
+            <div className="pt-2">
               <button
                 onClick={handleSendWhatsApp}
-                className="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-2xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-base shadow-xl hover:shadow-2xl transition-all"
+                className="w-full flex items-center justify-center gap-2 py-3 px-5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold text-sm shadow-xs transition-transform active:scale-95"
               >
-                <MessageSquare className="w-5 h-5 fill-white" />
-                <span>Send Enquiry to WhatsApp Now</span>
+                <MessageSquare className="w-4 h-4 fill-white" />
+                <span>Chat on WhatsApp Directly</span>
               </button>
-              <p className="text-xs text-slate-400">
-                Clicking above opens WhatsApp with your pre-filled details addressed to Star Tourism ({BUSINESS_CONFIG.displayWhatsapp}).
-              </p>
             </div>
 
-            <div className="pt-6 border-t border-slate-100 flex items-center justify-center gap-4 text-xs font-semibold">
+            <p className="text-[11px] text-stone-400">
+              * Official confirmation is issued after date & accommodation availability verification.
+            </p>
+
+            <div className="pt-4 border-t border-stone-100 flex items-center justify-center gap-4 text-xs">
               <button
                 onClick={() => setSubmittedData(null)}
-                className="text-slate-600 hover:text-slate-900 underline"
+                className="text-stone-600 underline"
               >
-                Submit another enquiry
+                Submit another request
               </button>
-              <span className="text-slate-300">•</span>
-              <Link to="/packages" className="text-[#0F382A] hover:underline">
-                Explore more tour packages
+              <span>•</span>
+              <Link to="/packages" className="text-[#12372A] font-medium">
+                Browse Packages
               </Link>
             </div>
           </div>
         ) : (
-          /* The Form */
-          <div className="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-200/80">
-            <form onSubmit={handleSubmit} className="space-y-8">
+          <div className="bg-white rounded-2xl p-6 sm:p-8 border border-stone-200/90 shadow-xs">
+            <form onSubmit={handleSubmit} className="space-y-5">
               
-              {/* Section 1: Contact Information */}
-              <div>
-                <h4 className="text-lg font-serif font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center gap-2">
-                  <User className="w-5 h-5 text-[#C5A059]" />
-                  <span>1. Contact Details</span>
+              {/* Contact */}
+              <div className="space-y-3">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-stone-400">
+                  1. Your Details
                 </h4>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* Full Name */}
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
+                    <label className="block text-xs font-medium text-stone-700 mb-1">
                       Full Name *
                     </label>
                     <input
@@ -219,221 +180,159 @@ export default function BookingEnquiryPage() {
                       placeholder="e.g. Suresh Kumar"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className={`w-full p-3 rounded-xl border text-sm outline-none transition-colors ${
-                        errors.name ? 'border-rose-400 bg-rose-50/50' : 'border-slate-300 focus:border-emerald-600'
+                      className={`w-full p-2.5 rounded-lg border text-xs sm:text-sm outline-none transition-colors ${
+                        errors.name ? 'border-rose-300 bg-rose-50/40' : 'border-stone-300 focus:border-[#12372A]'
                       }`}
                     />
-                    {errors.name && <p className="text-xs text-rose-600 mt-1">{errors.name}</p>}
+                    {errors.name && <p className="text-[11px] text-rose-500 mt-1">{errors.name}</p>}
                   </div>
 
-                  {/* Phone / WhatsApp */}
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
-                      Mobile / WhatsApp Number *
+                    <label className="block text-xs font-medium text-stone-700 mb-1">
+                      WhatsApp / Mobile *
                     </label>
                     <input
                       type="tel"
                       placeholder="e.g. 9876543210"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className={`w-full p-3 rounded-xl border text-sm outline-none transition-colors ${
-                        errors.phone ? 'border-rose-400 bg-rose-50/50' : 'border-slate-300 focus:border-emerald-600'
+                      className={`w-full p-2.5 rounded-lg border text-xs sm:text-sm outline-none transition-colors ${
+                        errors.phone ? 'border-rose-300 bg-rose-50/40' : 'border-stone-300 focus:border-[#12372A]'
                       }`}
                     />
-                    {errors.phone && <p className="text-xs text-rose-600 mt-1">{errors.phone}</p>}
+                    {errors.phone && <p className="text-[11px] text-rose-500 mt-1">{errors.phone}</p>}
                   </div>
+                </div>
 
-                  {/* Email */}
-                  <div className="sm:col-span-2">
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      placeholder="e.g. suresh@example.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className={`w-full p-3 rounded-xl border text-sm outline-none transition-colors ${
-                        errors.email ? 'border-rose-400 bg-rose-50/50' : 'border-slate-300 focus:border-emerald-600'
-                      }`}
-                    />
-                    {errors.email && <p className="text-xs text-rose-600 mt-1">{errors.email}</p>}
-                  </div>
+                <div>
+                  <label className="block text-xs font-medium text-stone-700 mb-1">
+                    Email Address (Optional)
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="e.g. suresh@example.com"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full p-2.5 rounded-lg border border-stone-300 text-xs sm:text-sm outline-none focus:border-[#12372A]"
+                  />
                 </div>
               </div>
 
-              {/* Section 2: Travel Dates & Group */}
-              <div>
-                <h4 className="text-lg font-serif font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center gap-2">
-                  <Calendar className="w-5 h-5 text-[#C5A059]" />
-                  <span>2. Travel Dates & Group Size</span>
+              {/* Trip Timing */}
+              <div className="space-y-3 pt-3 border-t border-stone-100">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-stone-400">
+                  2. Travel Dates & Group
                 </h4>
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
-                      Arrival / Check-In Date *
+                    <label className="block text-xs font-medium text-stone-700 mb-1">
+                      Expected Travel Date *
                     </label>
                     <input
                       type="date"
                       value={formData.checkIn}
                       onChange={(e) => setFormData({ ...formData, checkIn: e.target.value })}
-                      className={`w-full p-3 rounded-xl border text-sm outline-none transition-colors ${
-                        errors.checkIn ? 'border-rose-400 bg-rose-50/50' : 'border-slate-300 focus:border-emerald-600'
+                      className={`w-full p-2.5 rounded-lg border text-xs sm:text-sm outline-none cursor-pointer ${
+                        errors.checkIn ? 'border-rose-300 bg-rose-50/40' : 'border-stone-300 focus:border-[#12372A]'
                       }`}
                     />
-                    {errors.checkIn && <p className="text-xs text-rose-600 mt-1">{errors.checkIn}</p>}
+                    {errors.checkIn && <p className="text-[11px] text-rose-500 mt-1">{errors.checkIn}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
-                      Departure Date (Optional)
-                    </label>
-                    <input
-                      type="date"
-                      value={formData.checkOut}
-                      onChange={(e) => setFormData({ ...formData, checkOut: e.target.value })}
-                      className="w-full p-3 rounded-xl border border-slate-300 text-sm outline-none focus:border-emerald-600"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
+                    <label className="block text-xs font-medium text-stone-700 mb-1">
                       Number of Guests
                     </label>
                     <select
                       value={formData.guests}
                       onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
-                      className="w-full p-3 rounded-xl border border-slate-300 text-sm outline-none focus:border-emerald-600 bg-white"
+                      className="w-full p-2.5 rounded-lg border border-stone-300 text-xs sm:text-sm outline-none bg-white"
                     >
-                      <option value="1 Solo Traveler">1 Solo Traveler</option>
+                      <option value="1 Solo Traveler">1 Solo</option>
                       <option value="2 Guests (Couple)">2 Guests (Couple)</option>
                       <option value="3-4 Guests (Family)">3-4 Guests (Family)</option>
                       <option value="5-8 Guests (Joint Family)">5-8 Guests (Joint Family)</option>
-                      <option value="9-15 Guests (Group)">9-15 Guests (Group)</option>
-                      <option value="16+ Guests (Corporate / College)">16+ Guests (Corporate / College)</option>
+                      <option value="9+ Guests (Group Tour)">9+ Guests (Group Tour)</option>
                     </select>
                   </div>
                 </div>
+
+                <div>
+                  <label className="block text-xs font-medium text-stone-700 mb-1">
+                    Select Package or Custom Plan
+                  </label>
+                  <select
+                    value={formData.selectedPackage}
+                    onChange={(e) => setFormData({ ...formData, selectedPackage: e.target.value })}
+                    className="w-full p-2.5 rounded-lg border border-stone-300 text-xs sm:text-sm outline-none bg-white"
+                  >
+                    <option value="">-- Let Star Tourism suggest the best package --</option>
+                    {TOUR_PACKAGES.map((pkg) => (
+                      <option key={pkg.id} value={pkg.name}>
+                        {pkg.name} ({pkg.duration})
+                      </option>
+                    ))}
+                    <option value="Custom Nilgiri Tour">Customized Multi-Day Tour</option>
+                  </select>
+                </div>
               </div>
 
-              {/* Section 3: Package & Requirements */}
-              <div>
-                <h4 className="text-lg font-serif font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100 flex items-center gap-2">
-                  <Sparkles className="w-5 h-5 text-[#C5A059]" />
-                  <span>3. Package & Service Requirements</span>
+              {/* Preferences: Simple neat checkboxes */}
+              <div className="space-y-3 pt-3 border-t border-stone-100">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-stone-400">
+                  3. What Should We Include?
                 </h4>
 
-                <div className="space-y-4">
-                  {/* Package Selector */}
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
-                      Selected Package (or Choose Custom Itinerary)
-                    </label>
-                    <select
-                      value={formData.selectedPackage}
-                      onChange={(e) => setFormData({ ...formData, selectedPackage: e.target.value })}
-                      className="w-full p-3 rounded-xl border border-slate-300 text-sm outline-none focus:border-emerald-600 bg-white"
-                    >
-                      <option value="">-- Let Star Tourism suggest the best package --</option>
-                      {TOUR_PACKAGES.map((pkg) => (
-                        <option key={pkg.id} value={pkg.name}>
-                          {pkg.name} ({pkg.duration} - ₹{pkg.price?.toLocaleString('en-IN')})
-                        </option>
-                      ))}
-                      <option value="Customized Multi-Day Nilgiri Trip">Customized Multi-Day Nilgiri Trip</option>
-                    </select>
-                  </div>
+                <div className="grid grid-cols-2 gap-3">
+                  <label className={`p-3 rounded-xl border text-xs cursor-pointer flex items-center gap-2 transition-all ${
+                    formData.hotelRequired ? 'border-[#12372A] bg-stone-50 font-semibold text-[#12372A]' : 'border-stone-200 text-stone-600'
+                  }`}>
+                    <input
+                      type="checkbox"
+                      checked={formData.hotelRequired}
+                      onChange={(e) => setFormData({ ...formData, hotelRequired: e.target.checked })}
+                      className="accent-[#12372A]"
+                    />
+                    <span>Hotel / Resort</span>
+                  </label>
 
-                  {/* Requirements Checkboxes */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                    {/* Hotel Option */}
-                    <div className="p-4 rounded-xl border border-slate-200 bg-slate-50/60 space-y-2">
-                      <label className="flex items-center gap-2.5 cursor-pointer">
-                        <input
-                          type="checkbox"
-                          checked={formData.hotelRequired}
-                          onChange={(e) => setFormData({ ...formData, hotelRequired: e.target.checked })}
-                          className="w-4 h-4 accent-[#0F382A]"
-                        />
-                        <span className="font-bold text-sm text-slate-900 flex items-center gap-1.5">
-                          <Hotel className="w-4 h-4 text-[#C5A059]" />
-                          Include Hotel / Resort Accommodation
-                        </span>
-                      </label>
-                      {formData.hotelRequired && (
-                        <select
-                          value={formData.hotelCategory}
-                          onChange={(e) => setFormData({ ...formData, hotelCategory: e.target.value })}
-                          className="w-full text-xs p-2 rounded-lg border border-slate-200 bg-white mt-1"
-                        >
-                          <option value="Luxury Tea Estate Resort">Luxury Tea Estate Resort (Fireplace)</option>
-                          <option value="Hilltop Wooden Cottage">Hilltop Wooden Cottage</option>
-                          <option value="3-Star Deluxe Town Stay">3-Star Deluxe Town Stay</option>
-                          <option value="Budget Family Room">Budget Family Room</option>
-                        </select>
-                      )}
-                    </div>
+                  <label className={`p-3 rounded-xl border text-xs cursor-pointer flex items-center gap-2 transition-all ${
+                    formData.cabRequired ? 'border-[#12372A] bg-stone-50 font-semibold text-[#12372A]' : 'border-stone-200 text-stone-600'
+                  }`}>
+                    <input
+                      type="checkbox"
+                      checked={formData.cabRequired}
+                      onChange={(e) => setFormData({ ...formData, cabRequired: e.target.checked })}
+                      className="accent-[#12372A]"
+                    />
+                    <span>Sightseeing Cab</span>
+                  </label>
+                </div>
 
-                    {/* Cab Option */}
-                    <div className="p-4 rounded-xl border border-slate-200 bg-slate-50/60 space-y-2">
-                      <label className="flex items-center gap-2.5 cursor-pointer">
-                        <input
-                          type="checkbox"
-                          checked={formData.cabRequired}
-                          onChange={(e) => setFormData({ ...formData, cabRequired: e.target.checked })}
-                          className="w-4 h-4 accent-[#0F382A]"
-                        />
-                        <span className="font-bold text-sm text-slate-900 flex items-center gap-1.5">
-                          <Car className="w-4 h-4 text-[#C5A059]" />
-                          Include Cab & Sightseeing Transportation
-                        </span>
-                      </label>
-                      {formData.cabRequired && (
-                        <select
-                          value={formData.cabType}
-                          onChange={(e) => setFormData({ ...formData, cabType: e.target.value })}
-                          className="w-full text-xs p-2 rounded-lg border border-slate-200 bg-white mt-1"
-                        >
-                          <option value="Dedicated Private Sedan (Dzire/Etios)">Private Sedan (Swift Dzire / Etios)</option>
-                          <option value="Toyota Innova / Crysta SUV">Toyota Innova / Crysta SUV</option>
-                          <option value="Maruti Ertiga (Family)">Maruti Ertiga</option>
-                          <option value="Tempo Traveller (12-16 seater)">Tempo Traveller (12-16 seater)</option>
-                        </select>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Additional Notes */}
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1.5">
-                      Additional Requests / Notes
-                    </label>
-                    <textarea
-                      rows={3}
-                      placeholder="e.g. Need Coimbatore airport pickup, special flower bed decor for honeymoon, toy train ticket guidance..."
-                      value={formData.additionalNotes}
-                      onChange={(e) => setFormData({ ...formData, additionalNotes: e.target.value })}
-                      className="w-full p-3 rounded-xl border border-slate-300 text-sm outline-none focus:border-emerald-600"
-                    ></textarea>
-                  </div>
+                <div>
+                  <label className="block text-xs font-medium text-stone-700 mb-1">
+                    Special Notes / Pickup Points
+                  </label>
+                  <textarea
+                    rows={2}
+                    placeholder="e.g. Coimbatore airport pickup, toy train assistance..."
+                    value={formData.additionalNotes}
+                    onChange={(e) => setFormData({ ...formData, additionalNotes: e.target.value })}
+                    className="w-full p-2.5 rounded-lg border border-stone-300 text-xs outline-none focus:border-[#12372A]"
+                  ></textarea>
                 </div>
               </div>
 
-              {/* Submit CTA */}
-              <div className="pt-4 space-y-3">
+              {/* Submit Button */}
+              <div className="pt-2">
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-[#0F382A] via-[#164E3D] to-[#1F6B54] hover:from-[#164E3D] hover:to-[#288469] text-white font-bold text-base shadow-xl hover:shadow-2xl transition-all border border-[#C5A059]/40 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                  className="w-full py-3 px-4 rounded-xl bg-[#12372A] hover:bg-[#1a4d3b] text-white font-semibold text-sm shadow-xs transition-all active:scale-95 disabled:opacity-50"
                 >
-                  <Send className="w-4 h-4 text-[#C5A059]" />
-                  <span>{isSubmitting ? "Submitting Enquiry..." : "Submit Travel Enquiry"}</span>
+                  {isSubmitting ? "Sending..." : "Request Itinerary & Quote"}
                 </button>
-
-                <p className="text-center text-xs text-slate-500">
-                  By submitting, you allow Star Tourism to contact you via WhatsApp / Phone to provide your customized itinerary and quotes.
-                </p>
               </div>
 
             </form>

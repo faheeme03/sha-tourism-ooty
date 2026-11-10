@@ -1,105 +1,84 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Calendar, Users, MapPin, Search, Compass, Sparkles } from 'lucide-react';
+import { Calendar, Users, Compass, Search } from 'lucide-react';
 
 export default function SearchEnquiryBar() {
   const navigate = useNavigate();
-  const [checkIn, setCheckIn] = useState('');
-  const [checkOut, setCheckOut] = useState('');
-  const [guests, setGuests] = useState('2 Guests');
   const [requirement, setRequirement] = useState('All-Inclusive Tour Package');
+  const [checkIn, setCheckIn] = useState('');
+  const [guests, setGuests] = useState('2 Guests (Couple)');
 
   const handleSearch = (e) => {
     e.preventDefault();
-    // Navigate to packages or booking page with query params
     const params = new URLSearchParams({
+      type: requirement,
       checkIn: checkIn || '',
-      checkOut: checkOut || '',
-      guests: guests || '',
-      type: requirement || ''
+      guests: guests || ''
     });
     navigate(`/packages?${params.toString()}`);
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl shadow-2xl p-4 sm:p-6 border border-emerald-900/10 text-slate-800">
-      <form onSubmit={handleSearch} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div className="w-full max-w-4xl mx-auto bg-white rounded-2xl sm:rounded-full p-2 sm:p-2.5 shadow-lg border border-stone-200/90 text-stone-800">
+      <form onSubmit={handleSearch} className="flex flex-col sm:flex-row items-center gap-2 sm:gap-1">
         
-        {/* Check-In Date */}
-        <div className="flex flex-col gap-1.5 p-3 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-emerald-500 transition-colors">
-          <label className="text-[11px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
-            <Calendar className="w-3.5 h-3.5 text-[#C5A059]" />
-            Check-In Date
-          </label>
-          <input
-            type="date"
-            value={checkIn}
-            onChange={(e) => setCheckIn(e.target.value)}
-            className="w-full bg-transparent text-sm font-semibold text-slate-900 outline-none cursor-pointer"
-          />
-        </div>
-
-        {/* Check-Out Date */}
-        <div className="flex flex-col gap-1.5 p-3 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-emerald-500 transition-colors">
-          <label className="text-[11px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
-            <Calendar className="w-3.5 h-3.5 text-[#C5A059]" />
-            Check-Out Date
-          </label>
-          <input
-            type="date"
-            value={checkOut}
-            onChange={(e) => setCheckOut(e.target.value)}
-            className="w-full bg-transparent text-sm font-semibold text-slate-900 outline-none cursor-pointer"
-          />
-        </div>
-
-        {/* Number of Guests */}
-        <div className="flex flex-col gap-1.5 p-3 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-emerald-500 transition-colors">
-          <label className="text-[11px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
-            <Users className="w-3.5 h-3.5 text-[#C5A059]" />
-            Guests
-          </label>
-          <select
-            value={guests}
-            onChange={(e) => setGuests(e.target.value)}
-            className="w-full bg-transparent text-sm font-semibold text-slate-900 outline-none cursor-pointer"
-          >
-            <option value="1 Guest">1 Solo Traveler</option>
-            <option value="2 Guests (Couple)">2 Guests (Couple)</option>
-            <option value="3-4 Guests (Family)">3-4 Guests (Family)</option>
-            <option value="5-8 Guests (Joint Family)">5-8 Guests (Joint Family)</option>
-            <option value="9+ Guests (Group Tour)">9+ Guests (Group Tour)</option>
-          </select>
-        </div>
-
-        {/* Travel Requirement */}
-        <div className="flex flex-col gap-1.5 p-3 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-emerald-500 transition-colors">
-          <label className="text-[11px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5">
-            <Compass className="w-3.5 h-3.5 text-[#C5A059]" />
-            Travel Plan
+        {/* Requirement */}
+        <div className="w-full sm:flex-1 px-4 py-2 sm:border-r border-stone-200 text-left">
+          <label className="block text-[11px] font-bold uppercase tracking-wider text-stone-400">
+            Trip Type
           </label>
           <select
             value={requirement}
             onChange={(e) => setRequirement(e.target.value)}
-            className="w-full bg-transparent text-sm font-semibold text-slate-900 outline-none cursor-pointer"
+            className="w-full text-xs sm:text-sm font-semibold text-stone-900 bg-transparent outline-none cursor-pointer pt-0.5"
           >
             <option value="All-Inclusive Tour Package">Tour Package (Stay + Cab)</option>
             <option value="Honeymoon Special">Honeymoon & Couple Trip</option>
             <option value="Hotel / Resort Only">Hotel / Resort Booking</option>
             <option value="Cab & Sightseeing Only">Cab Rental & Sightseeing</option>
-            <option value="Customized Vacation">Customized Vacation</option>
+            <option value="Customized Vacation">Custom Vacation</option>
           </select>
         </div>
 
-        {/* Search Submit Button */}
-        <div className="lg:col-span-4 pt-1">
+        {/* Date */}
+        <div className="w-full sm:w-44 px-4 py-2 sm:border-r border-stone-200 text-left">
+          <label className="block text-[11px] font-bold uppercase tracking-wider text-stone-400">
+            Travel Date
+          </label>
+          <input
+            type="date"
+            value={checkIn}
+            onChange={(e) => setCheckIn(e.target.value)}
+            className="w-full text-xs sm:text-sm font-semibold text-stone-900 bg-transparent outline-none cursor-pointer pt-0.5"
+          />
+        </div>
+
+        {/* Guests */}
+        <div className="w-full sm:w-40 px-4 py-2 text-left">
+          <label className="block text-[11px] font-bold uppercase tracking-wider text-stone-400">
+            Guests
+          </label>
+          <select
+            value={guests}
+            onChange={(e) => setGuests(e.target.value)}
+            className="w-full text-xs sm:text-sm font-semibold text-stone-900 bg-transparent outline-none cursor-pointer pt-0.5"
+          >
+            <option value="1 Solo Traveler">1 Solo</option>
+            <option value="2 Guests (Couple)">2 Guests</option>
+            <option value="3-4 Guests (Family)">3-4 Family</option>
+            <option value="5-8 Guests (Joint Family)">5-8 Group</option>
+            <option value="9+ Guests (Group Tour)">9+ Group</option>
+          </select>
+        </div>
+
+        {/* Search CTA */}
+        <div className="w-full sm:w-auto p-1">
           <button
             type="submit"
-            className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#0F382A] via-[#164E3D] to-[#1F6B54] text-white font-bold text-sm sm:text-base shadow-lg hover:shadow-xl hover:from-[#164E3D] hover:to-[#288469] transition-all transform active:scale-98 border border-[#C5A059]/40 cursor-pointer"
+            className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 rounded-xl sm:rounded-full bg-[#12372A] hover:bg-[#1a4d3b] text-white text-xs sm:text-sm font-semibold transition-all active:scale-95 shadow-sm"
           >
-            <Search className="w-4 h-4 text-[#C5A059]" />
-            <span>Search Packages & Availability</span>
-            <Sparkles className="w-4 h-4 text-[#C5A059] ml-1" />
+            <Search className="w-4 h-4" />
+            <span>Search</span>
           </button>
         </div>
 

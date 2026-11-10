@@ -14,34 +14,31 @@ export default function WhyChooseUs() {
   };
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <SectionHeader
         badge="Why Star Tourism"
-        title="Your Trusted Ooty Travel Partner"
-        subtitle="With deep roots in the Nilgiris and decades of hospitality expertise, we turn your mountain holiday into a collection of unforgettable moments."
+        title="Travel with Local Confidence"
+        subtitle="We are based in Ooty and manage every aspect of your stay, cab, and sightseeing directly."
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {WHY_CHOOSE_US.map((item, idx) => {
           const Icon = iconMap[item.icon] || Award;
 
           return (
             <div
               key={idx}
-              className="p-8 rounded-3xl bg-white border border-slate-200/80 shadow-xs hover:shadow-xl transition-all duration-300 relative group overflow-hidden"
+              className="p-6 rounded-2xl bg-white border border-stone-200/80 shadow-xs space-y-3"
             >
-              {/* Corner accent */}
-              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-emerald-50 to-transparent rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-125"></div>
-
-              <div className="w-14 h-14 rounded-2xl bg-[#0F382A]/10 text-[#0F382A] flex items-center justify-center mb-6 group-hover:bg-[#0F382A] group-hover:text-[#C5A059] transition-colors shadow-xs">
-                <Icon className="w-7 h-7" />
+              <div className="w-10 h-10 rounded-xl bg-stone-100 text-[#12372A] flex items-center justify-center">
+                <Icon className="w-5 h-5" />
               </div>
 
-              <h3 className="text-xl font-serif font-bold text-slate-900 mb-3 group-hover:text-[#0F382A] transition-colors">
+              <h3 className="text-base font-serif font-bold text-stone-900">
                 {item.title}
               </h3>
 
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="text-xs text-stone-500 leading-relaxed">
                 {item.desc}
               </p>
             </div>
@@ -49,40 +46,32 @@ export default function WhyChooseUs() {
         })}
       </div>
 
-      {/* Trust stats banner */}
-      <div className="mt-16 bg-gradient-to-r from-[#0F382A] via-[#164E3D] to-[#092218] rounded-3xl p-8 sm:p-10 text-white shadow-xl border border-[#C5A059]/40">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div>
-            <span className="block text-3xl sm:text-4xl font-serif font-black text-[#C5A059]">
+      {/* Neat minimalist trust stats */}
+      <div className="mt-12 py-8 px-6 bg-white rounded-2xl border border-stone-200/80 shadow-xs">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-y md:divide-y-0 md:divide-x divide-stone-100">
+          <div className="pt-2 md:pt-0">
+            <span className="block text-2xl sm:text-3xl font-serif font-black text-[#12372A]">
               12,000+
             </span>
-            <span className="mt-1 block text-xs sm:text-sm text-emerald-100/80">
-              Happy Guests Hosted
-            </span>
+            <span className="text-xs text-stone-500">Travelers Hosted</span>
           </div>
-          <div>
-            <span className="block text-3xl sm:text-4xl font-serif font-black text-[#C5A059]">
+          <div className="pt-2 md:pt-0">
+            <span className="block text-2xl sm:text-3xl font-serif font-black text-[#12372A]">
               40+
             </span>
-            <span className="mt-1 block text-xs sm:text-sm text-emerald-100/80">
-              Verified Partner Resorts
-            </span>
+            <span className="text-xs text-stone-500">Partner Resorts & Stays</span>
           </div>
-          <div>
-            <span className="block text-3xl sm:text-4xl font-serif font-black text-[#C5A059]">
+          <div className="pt-2 md:pt-0">
+            <span className="block text-2xl sm:text-3xl font-serif font-black text-[#12372A]">
               25+
             </span>
-            <span className="mt-1 block text-xs sm:text-sm text-emerald-100/80">
-              Dedicated Hill Cabs
-            </span>
+            <span className="text-xs text-stone-500">Dedicated Hill Cabs</span>
           </div>
-          <div>
-            <span className="block text-3xl sm:text-4xl font-serif font-black text-[#C5A059]">
+          <div className="pt-2 md:pt-0">
+            <span className="block text-2xl sm:text-3xl font-serif font-black text-[#12372A]">
               4.9 / 5
             </span>
-            <span className="mt-1 block text-xs sm:text-sm text-emerald-100/80">
-              Traveler Satisfaction
-            </span>
+            <span className="text-xs text-stone-500">Guest Rating</span>
           </div>
         </div>
       </div>

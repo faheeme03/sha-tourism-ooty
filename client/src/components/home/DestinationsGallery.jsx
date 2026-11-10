@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Clock, ArrowRight, Eye, X } from 'lucide-react';
+import { MapPin, ArrowRight, X } from 'lucide-react';
 import SectionHeader from '../common/SectionHeader';
 import { OOTY_DESTINATIONS } from '../../data/placeholderData';
 
@@ -8,129 +8,99 @@ export default function DestinationsGallery() {
   const [selectedDest, setSelectedDest] = useState(null);
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-16 sm:py-20 bg-white border-b border-stone-200/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Nilgiri Sights & Wonders"
-          title="Iconic Ooty Destinations"
-          subtitle="From misty cloud-covered peaks to emerald green lakes and century-old colonial gardens, explore the best of the Nilgiris."
+          badge="Attractions"
+          title="Must-Visit Ooty Destinations"
+          subtitle="From misty cloud summits to sparkling lakes and historic colonial gardens."
         />
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Clean 4-Col Gallery */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {OOTY_DESTINATIONS.map((dest) => (
             <div
               key={dest.id}
               onClick={() => setSelectedDest(dest)}
-              className="group relative h-80 rounded-3xl overflow-hidden shadow-md cursor-pointer border border-slate-200/80 hover:shadow-2xl transition-all duration-300"
+              className="group relative h-64 rounded-2xl overflow-hidden cursor-pointer shadow-xs border border-stone-200/60 bg-stone-100"
             >
-              {/* Background Image */}
               <img
                 src={dest.image}
                 alt={dest.name}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-300"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
 
-              {/* Gradient Scrim */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#092218] via-[#092218]/40 to-transparent opacity-90 group-hover:opacity-95 transition-opacity"></div>
-
-              {/* Tag */}
-              <div className="absolute top-4 left-4">
-                <span className="px-3 py-1 rounded-full text-[11px] font-bold bg-white/20 backdrop-blur-md text-white border border-white/30">
+              <div className="absolute bottom-3 left-3 right-3 text-white">
+                <span className="text-[10px] font-semibold text-stone-300 block">
                   {dest.category}
                 </span>
-              </div>
-
-              {/* Bottom Details */}
-              <div className="absolute bottom-0 left-0 right-0 p-5 text-white transform group-hover:-translate-y-1 transition-transform">
-                <h3 className="text-xl font-serif font-bold text-white group-hover:text-[#ECD29E] transition-colors leading-snug">
+                <h3 className="text-base font-serif font-bold text-white group-hover:text-amber-200 transition-colors">
                   {dest.name}
                 </h3>
-                <p className="text-xs text-emerald-200/90 mt-1 line-clamp-1">
-                  {dest.subtitle}
-                </p>
-
-                <p className="mt-2 text-xs text-slate-300 line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  {dest.description}
-                </p>
-
-                <div className="mt-3 flex items-center justify-between text-[11px] text-[#C5A059] font-semibold pt-2 border-t border-white/20">
-                  <span className="flex items-center gap-1">
-                    <MapPin className="w-3 h-3" />
-                    {dest.distance}
-                  </span>
-                  <span className="flex items-center gap-1">
-                    Details <ArrowRight className="w-3 h-3" />
-                  </span>
-                </div>
+                <span className="text-[11px] text-white/80 flex items-center gap-1 mt-0.5">
+                  <MapPin className="w-3 h-3 text-[#CBA75C]" />
+                  {dest.distance}
+                </span>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Explore All Sightseeing link */}
-        <div className="mt-12 text-center">
+        <div className="mt-10 text-center">
           <Link
             to="/sightseeing"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-emerald-50 hover:bg-emerald-100 text-[#0F382A] text-sm font-bold border border-emerald-200 shadow-xs hover:shadow-md transition-all"
+            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#12372A] hover:underline"
           >
-            <span>Explore Complete Ooty Sightseeing Guide</span>
-            <ArrowRight className="w-4 h-4" />
+            <span>Explore full sightseeing guide</span>
+            <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
       </div>
 
-      {/* Destination Modal */}
+      {/* Neat Clean Modal */}
       {selectedDest && (
-        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl max-w-xl w-full overflow-hidden shadow-2xl relative animate-in fade-in zoom-in-95 duration-200">
-            <button
-              onClick={() => setSelectedDest(null)}
-              className="absolute top-4 right-4 z-20 p-2 rounded-full bg-black/60 hover:bg-black text-white"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            <div className="relative h-64">
-              <img
-                src={selectedDest.image}
-                alt={selectedDest.name}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-              <div className="absolute bottom-4 left-6 right-6 text-white">
-                <span className="text-xs font-bold text-[#ECD29E] uppercase tracking-wider block">
-                  {selectedDest.category}
-                </span>
-                <h3 className="text-2xl font-serif font-black">{selectedDest.name}</h3>
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-xl border border-stone-200">
+            <div className="relative h-52 bg-stone-900">
+              <img src={selectedDest.image} alt={selectedDest.name} className="w-full h-full object-cover" />
+              <button
+                onClick={() => setSelectedDest(null)}
+                className="absolute top-3 right-3 p-1.5 rounded-full bg-black/50 hover:bg-black text-white"
+              >
+                <X className="w-4 h-4" />
+              </button>
+              <div className="absolute bottom-3 left-4 right-4 text-white">
+                <h3 className="text-xl font-serif font-bold">{selectedDest.name}</h3>
+                <p className="text-xs text-white/80">{selectedDest.subtitle}</p>
               </div>
             </div>
 
-            <div className="p-6 space-y-4">
-              <p className="text-sm text-slate-600 leading-relaxed">
+            <div className="p-6 space-y-4 text-xs">
+              <p className="text-stone-600 leading-relaxed text-sm">
                 {selectedDest.description}
               </p>
 
-              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2 text-xs">
-                <div className="flex items-center justify-between">
-                  <span className="font-semibold text-slate-500">Key Highlight:</span>
-                  <span className="font-bold text-[#0F382A]">{selectedDest.highlight}</span>
+              <div className="p-3 rounded-xl bg-stone-50 border border-stone-200/70 space-y-1.5">
+                <div className="flex justify-between">
+                  <span className="text-stone-500 font-medium">Highlight:</span>
+                  <span className="font-semibold text-stone-800">{selectedDest.highlight}</span>
                 </div>
-                <div className="flex items-center justify-between">
-                  <span className="font-semibold text-slate-500">Visiting Hours:</span>
-                  <span className="font-bold text-slate-800">{selectedDest.timing}</span>
+                <div className="flex justify-between">
+                  <span className="text-stone-500 font-medium">Timing:</span>
+                  <span className="font-semibold text-stone-800">{selectedDest.timing}</span>
                 </div>
-                <div className="flex items-center justify-between">
-                  <span className="font-semibold text-slate-500">Distance from Ooty:</span>
-                  <span className="font-bold text-slate-800">{selectedDest.distance}</span>
+                <div className="flex justify-between">
+                  <span className="text-stone-500 font-medium">Distance:</span>
+                  <span className="font-semibold text-stone-800">{selectedDest.distance}</span>
                 </div>
               </div>
 
-              <div className="pt-2 flex items-center gap-3">
+              <div className="pt-2">
                 <Link
                   to={`/booking?destination=${encodeURIComponent(selectedDest.name)}`}
                   onClick={() => setSelectedDest(null)}
-                  className="w-full py-3 rounded-xl bg-[#0F382A] text-white text-xs font-bold hover:bg-[#164E3D] text-center border border-[#C5A059]/40 shadow-sm"
+                  className="w-full block py-2.5 rounded-xl bg-[#12372A] text-white text-center font-semibold text-xs hover:bg-[#1a4d3b]"
                 >
                   Plan Cab / Trip to {selectedDest.name}
                 </Link>

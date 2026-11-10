@@ -10,33 +10,28 @@ export default function SectionHeader({
   const isCenter = align === 'center';
 
   return (
-    <div className={`mb-12 ${isCenter ? 'text-center max-w-3xl mx-auto' : 'max-w-2xl'}`}>
+    <div className={`mb-10 ${isCenter ? 'text-center max-w-2xl mx-auto' : 'max-w-xl'}`}>
       {badge && (
-        <span className={`inline-block text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3 ${
+        <span className={`inline-block text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3 ${
           light 
-            ? 'bg-emerald-900/60 text-emerald-200 border border-emerald-700/50' 
-            : 'bg-emerald-50 text-emerald-800 border border-emerald-200'
+            ? 'bg-white/10 text-emerald-200 border border-white/15' 
+            : 'bg-stone-100 text-stone-700 border border-stone-200/80'
         }`}>
           {badge}
         </span>
       )}
-      <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-serif font-bold tracking-tight ${
-        light ? 'text-white' : 'text-slate-900'
+      <h2 className={`text-2xl sm:text-3xl lg:text-4xl font-serif font-black tracking-tight ${
+        light ? 'text-white' : 'text-stone-900'
       }`}>
         {title}
       </h2>
       {subtitle && (
-        <p className={`mt-4 text-base sm:text-lg leading-relaxed ${
-          light ? 'text-emerald-100/80' : 'text-slate-600'
+        <p className={`mt-2.5 text-xs sm:text-sm leading-relaxed ${
+          light ? 'text-white/80' : 'text-stone-500'
         }`}>
           {subtitle}
         </p>
       )}
-      <div className={`mt-4 flex items-center gap-1.5 ${isCenter ? 'justify-center' : 'justify-start'}`}>
-        <span className="h-0.5 w-12 bg-[#C5A059] rounded-full"></span>
-        <span className="h-1.5 w-1.5 bg-[#C5A059] rounded-full"></span>
-        <span className="h-0.5 w-6 bg-[#C5A059]/60 rounded-full"></span>
-      </div>
     </div>
   );
 }

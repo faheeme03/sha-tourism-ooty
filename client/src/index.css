@@ -1,26 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  --color-forest-950: #05140e;
-  --color-forest-900: #092218;
-  --color-forest-850: #0c2b1f;
-  --color-forest-800: #0F382A;
-  --color-forest-700: #164E3D;
-  --color-forest-600: #1C634E;
-  --color-forest-500: #288469;
-  --color-forest-100: #E2ECE8;
-  --color-forest-50: #F1F6F4;
+  --color-forest-950: #081a13;
+  --color-forest-900: #0f2d22;
+  --color-forest-800: #12372A;
+  --color-forest-700: #1a4d3b;
+  --color-forest-600: #23654d;
+  --color-forest-500: #2f8566;
+  --color-forest-100: #E8F1ED;
+  --color-forest-50: #F3F8F5;
 
-  --color-gold-600: #9E7B33;
-  --color-gold-500: #C5A059;
-  --color-gold-400: #D8B775;
-  --color-gold-300: #ECD29E;
-  --color-gold-100: #FDF7EA;
+  --color-sand-50: #FAF8F5;
+  --color-sand-100: #F3EFE8;
+  --color-sand-200: #E6DFD3;
 
-  --color-cream-50: #FDFBF7;
-  --color-cream-100: #F7F4EC;
-  --color-cream-200: #ECE6D8;
-  --color-cream-300: #DFD6C2;
+  --color-gold-500: #B89047;
+  --color-gold-400: #CBA75C;
 
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -29,45 +24,35 @@
 @layer base {
   body {
     font-family: var(--font-sans);
-    color: #1a2421;
-    background-color: #fbf9f5;
+    color: #1c1917;
+    background-color: #faf9f6;
+    letter-spacing: -0.01em;
   }
 
   h1, h2, h3, .font-serif {
     font-family: var(--font-serif);
+    letter-spacing: -0.02em;
   }
 }
 
-/* Custom scrollbar */
+/* Minimalist scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C5A059;
-  border-radius: 4px;
+  background: #d6d3d1;
+  border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #0F382A;
+  background: #12372A;
 }
 
-/* Glassmorphism helpers */
-.glass-nav {
-  background: rgba(255, 255, 255, 0.92);
+/* Clean utility classes */
+.glass-header {
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-}
-
-.glass-dark {
-  background: rgba(15, 56, 42, 0.88);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-}
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
 }
