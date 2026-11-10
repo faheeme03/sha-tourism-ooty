@@ -4,6 +4,7 @@ import { Search, SlidersHorizontal, Filter, Sparkles, AlertCircle } from 'lucide
 import SectionHeader from '../components/common/SectionHeader';
 import PackageCard from '../components/common/PackageCard';
 import PackageDetailModal from '../components/common/PackageDetailModal';
+import QuickBookWhatsAppModal from '../components/common/QuickBookWhatsAppModal';
 import { DocumentNoticeBanner } from '../components/common/PlaceholderBadge';
 import { TOUR_PACKAGES } from '../data/placeholderData';
 
@@ -16,6 +17,7 @@ export default function TourPackagesPage() {
   const [budgetFilter, setBudgetFilter] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedPackage, setSelectedPackage] = useState(null);
+  const [bookingPackage, setBookingPackage] = useState(null);
 
   const categories = [
     'All',
@@ -145,6 +147,7 @@ export default function TourPackagesPage() {
                 key={pkg.id}
                 pkg={pkg}
                 onOpenDetails={(p) => setSelectedPackage(p)}
+                onBookNow={(p) => setBookingPackage(p)}
               />
             ))}
           </div>
@@ -177,6 +180,18 @@ export default function TourPackagesPage() {
         <PackageDetailModal
           pkg={selectedPackage}
           onClose={() => setSelectedPackage(null)}
+          onBookNow={(p) => {
+            setSelectedPackage(null);
+            setBookingPackage(p);
+          }}
+        />
+      )}
+
+      {/* Direct WhatsApp Quick Booking Modal */}
+      {bookingPackage && (
+        <QuickBookWhatsAppModal
+          pkg={bookingPackage}
+          onClose={() => setBookingPackage(null)}
         />
       )}
     </div>

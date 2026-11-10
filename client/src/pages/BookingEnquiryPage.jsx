@@ -85,6 +85,20 @@ export default function BookingEnquiryPage() {
     } finally {
       setIsSubmitting(false);
       setSubmittedData(payload);
+      
+      // Instantly open WhatsApp with formatted details!
+      const msg = getCustomTripWhatsAppMessage({
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        checkIn: formData.checkIn,
+        guests: formData.guests,
+        interest: formData.selectedPackage || "Ooty Holiday",
+        hotelRequired: formData.hotelRequired,
+        cabRequired: formData.cabRequired,
+        additionalNotes: formData.additionalNotes
+      });
+      window.open(buildWhatsAppUrl(msg), '_blank');
       window.scrollTo({ top: 200, behavior: 'smooth' });
     }
   };
@@ -329,10 +343,15 @@ export default function BookingEnquiryPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3 px-4 rounded-xl bg-[#12372A] hover:bg-[#1a4d3b] text-white font-semibold text-sm shadow-xs transition-all active:scale-95 disabled:opacity-50"
+                  className="w-full py-3.5 px-4 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm shadow-xs transition-all active:scale-95 disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  {isSubmitting ? "Sending..." : "Request Itinerary & Quote"}
+                  <MessageSquare className="w-4 h-4 fill-white" />
+                  <span>{isSubmitting ? "Connecting..." : "Confirm & Send to WhatsApp"}</span>
+                  <ArrowRight className="w-4 h-4" />
                 </button>
+                <p className="text-[11px] text-stone-400 text-center mt-2">
+                  No online payment needed. Direct WhatsApp connection with SHA Tourism team for confirmation & customized arrangements.
+                </p>
               </div>
 
             </form>

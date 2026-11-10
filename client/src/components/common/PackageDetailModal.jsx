@@ -7,7 +7,7 @@ import {
 import PlaceholderBadge, { DocumentNoticeBanner } from './PlaceholderBadge';
 import { buildWhatsAppUrl, getPackageWhatsAppMessage } from '../../config/whatsapp';
 
-export default function PackageDetailModal({ pkg, onClose }) {
+export default function PackageDetailModal({ pkg, onClose, onBookNow }) {
   if (!pkg) return null;
 
   const formattedPrice = pkg.price ? `₹${Number(pkg.price).toLocaleString('en-IN')}` : 'Contact for Quote';
@@ -87,19 +87,18 @@ export default function PackageDetailModal({ pkg, onClose }) {
             <div className="flex items-center gap-3">
               <button
                 onClick={handleWhatsApp}
-                className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-bold shadow-md transition-all"
+                className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-bold shadow-md transition-all cursor-pointer"
               >
                 <MessageSquare className="w-4 h-4 fill-white" />
-                <span>WhatsApp Enquiry</span>
+                <span>Quick WhatsApp Enquiry</span>
               </button>
-              <Link
-                to={`/booking?packageId=${pkg.id}&packageName=${encodeURIComponent(pkg.name)}`}
-                onClick={onClose}
-                className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#0F382A] hover:bg-[#164E3D] text-white text-xs sm:text-sm font-bold shadow-md transition-all border border-[#C5A059]/40"
+              <button
+                onClick={() => onBookNow ? onBookNow(pkg) : handleWhatsApp()}
+                className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#12372A] hover:bg-[#1a4d3b] text-white text-xs sm:text-sm font-bold shadow-md transition-all cursor-pointer"
               >
-                <span>Book This Package</span>
+                <span>Select Date & Book on WhatsApp</span>
                 <ArrowRight className="w-4 h-4" />
-              </Link>
+              </button>
             </div>
           </div>
 
@@ -265,13 +264,13 @@ export default function PackageDetailModal({ pkg, onClose }) {
             >
               Close
             </button>
-            <Link
-              to={`/booking?packageId=${pkg.id}&packageName=${encodeURIComponent(pkg.name)}`}
-              onClick={onClose}
-              className="flex-1 sm:flex-none px-6 py-2.5 rounded-xl bg-[#0F382A] text-white text-xs font-bold hover:bg-[#164E3D] shadow-md border border-[#C5A059]/40 text-center"
+            <button
+              onClick={() => onBookNow ? onBookNow(pkg) : handleWhatsApp()}
+              className="flex-1 sm:flex-none px-6 py-2.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold shadow-md text-center flex items-center justify-center gap-1.5 cursor-pointer"
             >
-              Book Now
-            </Link>
+              <MessageSquare className="w-3.5 h-3.5 fill-white" />
+              <span>Book Now on WhatsApp</span>
+            </button>
           </div>
         </div>
 

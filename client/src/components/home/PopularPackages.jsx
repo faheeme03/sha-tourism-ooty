@@ -4,11 +4,13 @@ import { ArrowRight } from 'lucide-react';
 import SectionHeader from '../common/SectionHeader';
 import PackageCard from '../common/PackageCard';
 import PackageDetailModal from '../common/PackageDetailModal';
+import QuickBookWhatsAppModal from '../common/QuickBookWhatsAppModal';
 import { TOUR_PACKAGES } from '../../data/placeholderData';
 
 export default function PopularPackages() {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedPackage, setSelectedPackage] = useState(null);
+  const [bookingPackage, setBookingPackage] = useState(null);
 
   const categories = ['All', 'Weekend Packages', 'Couple Packages', 'Family Packages', 'Group Packages'];
 
@@ -48,6 +50,7 @@ export default function PopularPackages() {
             key={pkg.id}
             pkg={pkg}
             onOpenDetails={(p) => setSelectedPackage(p)}
+            onBookNow={(p) => setBookingPackage(p)}
           />
         ))}
       </div>
@@ -62,10 +65,23 @@ export default function PopularPackages() {
         </Link>
       </div>
 
+      {/* Package Detail Modal */}
       {selectedPackage && (
         <PackageDetailModal
           pkg={selectedPackage}
           onClose={() => setSelectedPackage(null)}
+          onBookNow={(p) => {
+            setSelectedPackage(null);
+            setBookingPackage(p);
+          }}
+        />
+      )}
+
+      {/* Direct WhatsApp Quick Booking Modal */}
+      {bookingPackage && (
+        <QuickBookWhatsAppModal
+          pkg={bookingPackage}
+          onClose={() => setBookingPackage(null)}
         />
       )}
     </section>

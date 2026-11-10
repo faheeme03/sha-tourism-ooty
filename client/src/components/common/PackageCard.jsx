@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Clock, Star, MessageSquare } from 'lucide-react';
+import { Clock, Star, MessageSquare, ArrowRight } from 'lucide-react';
 import { buildWhatsAppUrl, getPackageWhatsAppMessage } from '../../config/whatsapp';
 
-export default function PackageCard({ pkg, onOpenDetails }) {
+export default function PackageCard({ pkg, onOpenDetails, onBookNow }) {
   const formattedPrice = pkg.price ? `₹${Number(pkg.price).toLocaleString('en-IN')}` : 'On Request';
 
   const handleWhatsApp = (e) => {
@@ -12,11 +11,24 @@ export default function PackageCard({ pkg, onOpenDetails }) {
     window.open(buildWhatsAppUrl(msg), '_blank');
   };
 
+  const handleBookClick = (e) => {
+    e.preventDefault();
+    if (onBookNow) {
+      onBookNow(pkg);
+    } else {
+      const msg = getPackageWhatsAppMessage(pkg);
+      window.open(buildWhatsAppUrl(msg), '_blank');
+    }
+  };
+
   return (
     <div className="bg-white rounded-2xl overflow-hidden border border-stone-200/80 shadow-xs hover:shadow-md transition-all duration-200 flex flex-col group">
       
       {/* Image Banner */}
-      <div className="relative h-48 sm:h-52 overflow-hidden bg-stone-100">
+      <div 
+        onClick={() => onOpenDetails ? onOpenDetails(pkg) : null}
+        className="relative h-48 sm:h-52 overflow-hidden bg-stone-100 cursor-pointer"
+      >
         <img
           src={pkg.bannerImage}
           alt={pkg.name}
@@ -37,7 +49,10 @@ export default function PackageCard({ pkg, onOpenDetails }) {
       <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
         <div>
           <div className="flex items-center justify-between gap-2 mb-1">
-            <h3 className="text-base sm:text-lg font-serif font-bold text-stone-900 line-clamp-1 group-hover:text-[#12372A] transition-colors">
+            <h3 
+              onClick={() => onOpenDetails ? onOpenDetails(pkg) : null}
+              className="text-base sm:text-lg font-serif font-bold text-stone-900 line-clamp-1 group-hover:text-[#12372A] transition-colors cursor-pointer"
+            >
               {pkg.name}
             </h3>
             <span className="flex items-center gap-1 text-[11px] font-semibold text-stone-600 shrink-0">
@@ -50,7 +65,7 @@ export default function PackageCard({ pkg, onOpenDetails }) {
             {pkg.shortDescription}
           </p>
 
-          {/* Highlights (Clean & Minimal) */}
+          {/* Highlights */}
           {pkg.highlights && (
             <div className="mt-3 pt-3 border-t border-stone-100 space-y-1">
               {pkg.highlights.slice(0, 2).map((item, idx) => (
@@ -83,7 +98,7 @@ export default function PackageCard({ pkg, onOpenDetails }) {
             <button
               onClick={handleWhatsApp}
               className="p-2 rounded-full hover:bg-emerald-50 text-emerald-800 transition-colors border border-emerald-200"
-              title="Chat on WhatsApp"
+              title="Chat directly on WhatsApp"
             >
               <MessageSquare className="w-3.5 h-3.5 text-[#25D366] fill-[#25D366]" />
             </button>
@@ -96,12 +111,13 @@ export default function PackageCard({ pkg, onOpenDetails }) {
             >
               Details
             </button>
-            <Link
-              to={`/booking?packageId=${pkg.id}&packageName=${encodeURIComponent(pkg.name)}`}
-              className="w-full py-2 px-3 rounded-lg bg-[#12372A] hover:bg-[#1a4d3b] text-white text-xs font-semibold transition-colors text-center shadow-xs"
+            <button
+              onClick={handleBookClick}
+              className="w-full py-2 px-3 rounded-lg bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-semibold transition-colors text-center shadow-xs flex items-center justify-center gap-1 cursor-pointer"
             >
-              Book Now
-            </Link>
+              <MessageSquare className="w-3.5 h-3.5 fill-white" />
+              <span>Book Now</span>
+            </button>
           </div>
         </div>
 
