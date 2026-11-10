@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, ArrowRight, X } from 'lucide-react';
 import SectionHeader from '../common/SectionHeader';
+import { FadeIn, StaggerContainer, StaggerItem } from '../common/ScrollReveal';
 import { OOTY_DESTINATIONS } from '../../data/placeholderData';
 
 export default function DestinationsGallery() {
@@ -10,44 +11,47 @@ export default function DestinationsGallery() {
   return (
     <section className="py-16 sm:py-20 bg-white border-b border-stone-200/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          badge="Attractions"
-          title="Must-Visit Ooty Destinations"
-          subtitle="From misty cloud summits to sparkling lakes and historic colonial gardens."
-        />
+        <FadeIn>
+          <SectionHeader
+            badge="Attractions"
+            title="Must-Visit Ooty Destinations"
+            subtitle="From misty cloud summits to sparkling lakes and historic colonial gardens."
+          />
+        </FadeIn>
 
-        {/* Clean 4-Col Gallery */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {/* Clean 4-Col Gallery with Stagger */}
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {OOTY_DESTINATIONS.map((dest) => (
-            <div
-              key={dest.id}
-              onClick={() => setSelectedDest(dest)}
-              className="group relative h-64 rounded-2xl overflow-hidden cursor-pointer shadow-xs border border-stone-200/60 bg-stone-100"
-            >
-              <img
-                src={dest.image}
-                alt={dest.name}
-                className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-300"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
+            <StaggerItem key={dest.id}>
+              <div
+                onClick={() => setSelectedDest(dest)}
+                className="group relative h-64 rounded-2xl overflow-hidden cursor-pointer shadow-xs border border-stone-200/60 bg-stone-100"
+              >
+                <img
+                  src={dest.image}
+                  alt={dest.name}
+                  className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent"></div>
 
-              <div className="absolute bottom-3 left-3 right-3 text-white">
-                <span className="text-[10px] font-semibold text-stone-300 block">
-                  {dest.category}
-                </span>
-                <h3 className="text-base font-serif font-bold text-white group-hover:text-amber-200 transition-colors">
-                  {dest.name}
-                </h3>
-                <span className="text-[11px] text-white/80 flex items-center gap-1 mt-0.5">
-                  <MapPin className="w-3 h-3 text-[#CBA75C]" />
-                  {dest.distance}
-                </span>
+                <div className="absolute bottom-3 left-3 right-3 text-white">
+                  <span className="text-[10px] font-semibold text-stone-300 block">
+                    {dest.category}
+                  </span>
+                  <h3 className="text-base font-serif font-bold text-white group-hover:text-amber-200 transition-colors">
+                    {dest.name}
+                  </h3>
+                  <span className="text-[11px] text-white/80 flex items-center gap-1 mt-0.5">
+                    <MapPin className="w-3 h-3 text-[#CBA75C]" />
+                    {dest.distance}
+                  </span>
+                </div>
               </div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
 
-        <div className="mt-10 text-center">
+        <FadeIn delay={0.2} className="mt-10 text-center">
           <Link
             to="/sightseeing"
             className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#12372A] hover:underline"
@@ -55,7 +59,7 @@ export default function DestinationsGallery() {
             <span>Explore full sightseeing guide</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
-        </div>
+        </FadeIn>
       </div>
 
       {/* Neat Clean Modal */}

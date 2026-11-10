@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MessageSquare, ArrowRight } from 'lucide-react';
+import { FadeIn } from '../common/ScrollReveal';
 import { BUSINESS_CONFIG, buildWhatsAppUrl } from '../../config/whatsapp';
 
 export default function CTASection() {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#12372A] text-white">
-      <div className="max-w-4xl mx-auto text-center space-y-6">
+      <FadeIn className="max-w-4xl mx-auto text-center space-y-6">
         <span className="text-xs font-bold tracking-widest uppercase text-[#CBA75C]">
           Start Your Journey
         </span>
@@ -38,7 +39,7 @@ export default function CTASection() {
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
-      </div>
+      </FadeIn>
     </section>
   );
 }

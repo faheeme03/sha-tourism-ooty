@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import FloatingWhatsApp from './components/layout/FloatingWhatsApp';
+import ScrollToTopButton from './components/common/ScrollToTopButton';
 
 import HomePage from './pages/HomePage';
 import TourPackagesPage from './pages/TourPackagesPage';
@@ -58,10 +59,11 @@ export default function App() {
         </Routes>
       </main>
 
-      {/* Public Footer & Floating WhatsApp */}
+      {/* Public Footer & Floating Actions */}
       {!isAdminRoute && (
         <>
           <Footer />
+          <ScrollToTopButton />
           <FloatingWhatsApp />
         </>
       )}
