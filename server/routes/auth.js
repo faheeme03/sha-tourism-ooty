@@ -6,9 +6,9 @@ const { JWT_SECRET } = require('../middleware/auth');
 router.post('/login', (req, res) => {
   const { username, password } = req.body;
 
-  // Authenticate admin (Default: admin / StarOoty2026!)
+  // Authenticate admin (Default: admin / ShaOoty2026!)
   const expectedUser = process.env.ADMIN_USER || 'admin';
-  const expectedPass = process.env.ADMIN_PASSWORD || 'StarOoty2026!';
+  const expectedPass = process.env.ADMIN_PASSWORD || 'ShaOoty2026!';
 
   if (username === expectedUser && password === expectedPass) {
     const token = jwt.sign(
@@ -22,7 +22,7 @@ router.post('/login', (req, res) => {
       user: {
         username: expectedUser,
         role: 'Super Administrator',
-        name: 'Star Tourism Manager'
+        name: 'Sha Tourism Manager'
       }
     });
   }

@@ -64,7 +64,7 @@ export default function TourPackagesPage() {
         {/* Business Document Verification Notice */}
         <DocumentNoticeBanner 
           title="Tour Package Catalogue Notice"
-          message="These packages are modeled on high-demand Ooty circuits. When you supply Star Tourism's official business document with custom tour plans and prices, this catalog will immediately synchronize all exact itineraries."
+          message="These packages are modeled on high-demand Ooty circuits. When you supply Sha Tourism's official business document with custom tour plans and prices, this catalog will immediately synchronize all exact itineraries."
         />
 
         {/* Search & Filters Controls Bar */}

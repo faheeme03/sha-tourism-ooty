@@ -13,7 +13,7 @@ export default function FloatingWhatsApp() {
   ];
 
   const handleSend = (textToSend) => {
-    const text = textToSend || msg || "Hello Star Tourism, I'd like to plan an Ooty trip.";
+    const text = textToSend || msg || "Hello Sha Tourism, I'd like to plan an Ooty trip.";
     window.open(buildWhatsAppUrl(text), '_blank');
     setMsg('');
     setIsOpen(false);
@@ -26,7 +26,7 @@ export default function FloatingWhatsApp() {
           <div className="bg-[#12372A] text-white p-3.5 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-              <span className="text-xs font-semibold">Star Tourism Support</span>
+              <span className="text-xs font-semibold">Sha Tourism Support</span>
             </div>
             <button
               onClick={() => setIsOpen(false)}

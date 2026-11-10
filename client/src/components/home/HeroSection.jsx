@@ -21,8 +21,8 @@ export default function HeroSection() {
 
         {/* Top Tagline */}
         <div className="relative z-10 flex items-center gap-2">
-          <span className="px-3 py-1 rounded-full text-xs font-medium bg-white/20 backdrop-blur-md text-white border border-white/20">
-            ★ Star Tourism • Ooty
+          <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/20 backdrop-blur-md text-white border border-white/20">
+            SHA TOURISM • OOTY
           </span>
         </div>
 
@@ -32,7 +32,7 @@ export default function HeroSection() {
             Discover the Queen of Hill Stations – Ooty
           </h1>
           <p className="mt-4 text-sm sm:text-base text-white/90 font-normal leading-relaxed max-w-xl">
-            Your perfect getaway begins with Star Tourism. Explore breathtaking destinations, comfortable stays, and unforgettable travel experiences.
+            Your perfect getaway begins with Sha Tourism. Explore breathtaking destinations, comfortable stays, and unforgettable travel experiences.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-3">

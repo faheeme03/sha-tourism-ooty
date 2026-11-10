@@ -47,7 +47,7 @@ export default function CabServicesPage() {
 
         <DocumentNoticeBanner
           title="Vehicle Fleet & Tariff Verification Notice"
-          message="Cab hire rates in Ooty vary based on peak seasons (April-May flower show & Diwali/Christmas). The tariffs shown are standard baseline estimates awaiting official sync with Star Tourism's uploaded rate card."
+          message="Cab hire rates in Ooty vary based on peak seasons (April-May flower show & Diwali/Christmas). The tariffs shown are standard baseline estimates awaiting official sync with Sha Tourism's uploaded rate card."
         />
 
         {/* Fleet Grid */}
@@ -84,7 +84,7 @@ export default function CabServicesPage() {
                 <p className="text-xs text-slate-600 leading-relaxed">{srv.desc}</p>
                 <div className="pt-2">
                   <a
-                    href={buildWhatsAppUrl(`Hello Star Tourism! I want to inquire about: ${srv.title}`)}
+                    href={buildWhatsAppUrl(`Hello Sha Tourism! I want to inquire about: ${srv.title}`)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs font-bold text-[#0F382A] hover:text-[#C5A059] flex items-center gap-1 transition-colors"
@@ -112,7 +112,7 @@ export default function CabServicesPage() {
             </div>
 
             <a
-              href={buildWhatsAppUrl("Hello Star Tourism, I need urgent cab assistance in Ooty.")}
+              href={buildWhatsAppUrl("Hello Sha Tourism, I need urgent cab assistance in Ooty.")}
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs font-bold whitespace-nowrap shadow-md transition-all hover:scale-105"

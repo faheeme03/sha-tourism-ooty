@@ -31,13 +31,13 @@ export default function HotelsPage() {
         <SectionHeader
           badge="Nilgiri Stays & Resorts"
           title="Hotels, Cottages & Tea Estate Retreats"
-          subtitle="Wake up to misty hill views, crackling wood fireplaces, and rolling tea gardens. Handpicked properties inspected by Star Tourism."
+          subtitle="Wake up to misty hill views, crackling wood fireplaces, and rolling tea gardens. Handpicked properties inspected by Sha Tourism."
         />
 
         {/* Notice */}
         <DocumentNoticeBanner
           title="Accommodation Rates & Availability"
-          message="These curated accommodations demonstrate the range of stays Star Tourism arranges. Hotel names, specific room tariffs, and direct allocations will update from Star Tourism's uploaded document. All bookings are enquiry-based."
+          message="These curated accommodations demonstrate the range of stays Sha Tourism arranges. Hotel names, specific room tariffs, and direct allocations will update from Sha Tourism's uploaded document. All bookings are enquiry-based."
         />
 
         {/* Filter Controls */}

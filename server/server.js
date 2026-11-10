@@ -30,7 +30,7 @@ app.use('/api/settings', require('./routes/settings'));
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'online',
-    brand: 'STAR TOURISM',
+    brand: 'SHA TOURISM',
     location: 'Ooty, Tamil Nadu, India',
     time: new Date().toISOString()
   });
@@ -49,7 +49,7 @@ app.use((req, res, next) => {
 
 // Start Server
 app.listen(PORT, () => {
-  console.log(`🌲 STAR TOURISM Backend Server running on http://localhost:${PORT}`);
+  console.log(`🌲 SHA TOURISM Backend Server running on http://localhost:${PORT}`);
   console.log(`✨ Serving Ooty holiday packages, hotel stays, cab rentals, and WhatsApp integration`);
 });
 

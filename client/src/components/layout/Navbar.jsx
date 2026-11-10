@@ -46,12 +46,12 @@ export default function Navbar() {
           
           {/* Minimalist Logo */}
           <Link to="/" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 rounded-lg bg-[#12372A] flex items-center justify-center text-[#CBA75C] font-black text-sm">
-              ★
+            <div className="w-8 h-8 rounded-lg bg-[#12372A] flex items-center justify-center text-[#CBA75C] font-black text-[11px] tracking-wider">
+              SHA
             </div>
             <div className="flex flex-col">
               <span className="text-base sm:text-lg font-serif font-black tracking-tight text-[#12372A] leading-tight">
-                STAR TOURISM
+                SHA TOURISM
               </span>
               <span className="text-[10px] tracking-widest uppercase font-medium text-stone-500">
                 Ooty, Nilgiris

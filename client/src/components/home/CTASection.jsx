@@ -16,12 +16,12 @@ export default function CTASection() {
         </h2>
 
         <p className="text-sm sm:text-base text-white/80 max-w-xl mx-auto leading-relaxed">
-          Let Star Tourism make your next trip memorable. Contact us today and start planning your perfect getaway.
+          Let Sha Tourism make your next trip memorable. Contact us today and start planning your perfect getaway.
         </p>
 
         <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
           <a
-            href={buildWhatsAppUrl("Hello Star Tourism! I would like to plan an Ooty holiday.")}
+            href={buildWhatsAppUrl("Hello Sha Tourism! I would like to plan an Ooty holiday.")}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold text-xs sm:text-sm shadow-xs transition-transform active:scale-95"

@@ -14,14 +14,14 @@ export default function AboutUsPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <SectionHeader
-          badge="About Star Tourism"
+          badge="About Sha Tourism"
           title="Rooted in the Queen of Hill Stations"
           subtitle="Passionate local hosts, seasoned hill drivers, and dedicated travel curators committed to crafting unforgettable Nilgiri journeys."
         />
 
         <DocumentNoticeBanner
           title="Company History & Profile Placeholder Notice"
-          message="The company narrative, founders' statement, and milestones below are structured placeholders. They can be updated or personalized at any time from the Admin Settings or upon receiving Star Tourism's official business document."
+          message="The company narrative, founders' statement, and milestones below are structured placeholders. They can be updated or personalized at any time from the Admin Settings or upon receiving Sha Tourism's official business document."
         />
 
         {/* Hero Story Grid */}
@@ -34,7 +34,7 @@ export default function AboutUsPage() {
               Hospitality that Feels Like Coming Home to the Hills
             </h3>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-              Based in Ooty, Tamil Nadu, <strong>STAR TOURISM</strong> is a comprehensive holiday and travel management company. We were founded with a singular purpose: to make discovering the timeless beauty of the Nilgiris effortless, comfortable, and deeply enriching.
+              Based in Ooty, Tamil Nadu, <strong>SHA TOURISM</strong> is a comprehensive holiday and travel management company. We were founded with a singular purpose: to make discovering the timeless beauty of the Nilgiris effortless, comfortable, and deeply enriching.
             </p>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
               Whether you are a couple seeking a cozy tea estate cottage with a fireplace, a family needing a spacious Innova with a safe hill chauffeur, or friends ready for a campfire under the stars, our local team arranges every detail with genuine care.
@@ -88,7 +88,7 @@ export default function AboutUsPage() {
               To provide authentic, transparent, and seamless travel experiences in Ooty through high-standard accommodations, experienced local hill drivers, personalized care, and prompt WhatsApp support.
             </p>
             <div className="text-[11px] text-amber-200/70 pt-2 border-t border-white/10">
-              [Placeholder - Can be refined to reflect Star Tourism's official mission statement]
+              [Placeholder - Can be refined to reflect Sha Tourism's official mission statement]
             </div>
           </div>
 
@@ -101,7 +101,7 @@ export default function AboutUsPage() {
               We treat every traveler as a guest in our home town. Zero pushy sales tactics, zero hidden driver fees, and prompt on-ground assistance whenever you need travel advice, medical help, or route adjustments.
             </p>
             <div className="text-[11px] text-slate-400 pt-2 border-t border-slate-100">
-              [Placeholder - Star Tourism Guest Pledge]
+              [Placeholder - Sha Tourism Guest Pledge]
             </div>
           </div>
         </div>
@@ -109,7 +109,7 @@ export default function AboutUsPage() {
         {/* Why Choose Us Repeater */}
         <div className="space-y-6">
           <h3 className="text-2xl sm:text-3xl font-serif font-bold text-center text-slate-900">
-            Why Travelers Choose Star Tourism
+            Why Travelers Choose Sha Tourism
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {WHY_CHOOSE_US.slice(0, 3).map((item, idx) => (

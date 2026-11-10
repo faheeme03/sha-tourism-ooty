@@ -5,7 +5,7 @@ import { useAuth } from '../context/AuthContext';
 
 export default function AdminLoginPage() {
   const [username, setUsername] = useState('admin');
-  const [password, setPassword] = useState('StarOoty2026!');
+  const [password, setPassword] = useState('ShaOoty2026!');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -39,7 +39,7 @@ export default function AdminLoginPage() {
             <Lock className="w-6 h-6" />
           </div>
           <h2 className="text-2xl font-serif font-black text-slate-900">
-            Star Tourism Portal
+            SHA TOURISM Portal
           </h2>
           <p className="text-xs text-slate-500 mt-1">
             Secure Administrator Management Control Center
@@ -95,7 +95,7 @@ export default function AdminLoginPage() {
             </span>
             <div className="flex justify-between text-slate-600">
               <span>Username: <strong>admin</strong></span>
-              <span>Password: <strong>StarOoty2026!</strong></span>
+              <span>Password: <strong>ShaOoty2026!</strong></span>
             </div>
           </div>
 
@@ -111,7 +111,7 @@ export default function AdminLoginPage() {
 
         <div className="mt-8 pt-4 border-t border-slate-100 text-center">
           <Link to="/" className="text-xs text-slate-500 hover:text-slate-800">
-            ← Return to Star Tourism Public Website
+            ← Return to Sha Tourism Public Website
           </Link>
         </div>
       </div>

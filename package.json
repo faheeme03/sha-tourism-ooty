@@ -1,14 +1,14 @@
 {
-  "name": "star-tourism",
+  "name": "sha-tourism",
   "version": "1.0.0",
-  "description": "Star Tourism - Premium Ooty Tourism & Travel Booking Platform",
+  "description": "Sha Tourism - Premium Ooty Tourism & Travel Booking Platform",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
     "client": "npm run dev --prefix client",
     "server": "node server/server.js",
     "build": "npm run build --prefix client",
-    "test": "node -e \"console.log('Star Tourism tests passed!')\""
+    "test": "node -e \"console.log('Sha Tourism tests passed!')\""
   },
   "keywords": [
     "ooty",
@@ -20,6 +20,6 @@
     "hotels",
     "whatsapp-booking"
   ],
-  "author": "Star Tourism Ooty",
+  "author": "Sha Tourism Ooty",
   "license": "ISC"
 }

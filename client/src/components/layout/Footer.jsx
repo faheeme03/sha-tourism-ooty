@@ -14,11 +14,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-3">
             <Link to="/" className="flex items-center gap-2">
-              <span className="w-7 h-7 rounded-lg bg-[#12372A] text-[#CBA75C] flex items-center justify-center font-bold text-xs">
-                ★
+              <span className="w-7 h-7 rounded-lg bg-[#12372A] text-[#CBA75C] flex items-center justify-center font-black text-[10px] tracking-wider">
+                SHA
               </span>
               <span className="text-base font-serif font-black text-[#12372A]">
-                STAR TOURISM
+                SHA TOURISM
               </span>
             </Link>
             <p className="text-xs text-stone-500 leading-relaxed max-w-xs">
@@ -72,7 +72,7 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-400">
-          <p>© {currentYear} STAR TOURISM, Ooty. All Rights Reserved.</p>
+          <p>© {currentYear} SHA TOURISM, Ooty. All Rights Reserved.</p>
           <div className="flex items-center gap-4">
             <Link to="/about" className="hover:text-stone-600">Privacy & Terms</Link>
             <Link to="/admin" className="hover:text-stone-600">Admin Access</Link>

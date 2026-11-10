@@ -23,7 +23,7 @@ export default function AdminDashboardPage() {
   const [testimonials, setTestimonials] = useState(TESTIMONIALS_DATA);
   const [enquiries, setEnquiries] = useState([
     {
-      id: "STAR-849201",
+      id: "SHA-849201",
       name: "Ramesh Babu",
       phone: "+91 98401 23456",
       email: "ramesh.b@gmail.com",
@@ -37,7 +37,7 @@ export default function AdminDashboardPage() {
       date: "2026-11-10 14:30"
     },
     {
-      id: "STAR-849195",
+      id: "SHA-849195",
       name: "Pooja & Karthik",
       phone: "+91 99887 76655",
       email: "pooja.karthik@outlook.com",
@@ -135,7 +135,7 @@ export default function AdminDashboardPage() {
         reviewsCount: 10,
         isAwaitingDocument: false,
         bannerImage: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1200&q=80",
-        shortDescription: lines.slice(1, 4).join(' ').slice(0, 180) || "Directly synchronized from Star Tourism's official business document.",
+        shortDescription: lines.slice(1, 4).join(' ').slice(0, 180) || "Directly synchronized from Sha Tourism's official business document.",
         highlights: lines.slice(2, 6).map(l => l.replace(/^[#*-]\s*/, '')),
         inclusions: ["As per uploaded document specifications"],
         exclusions: ["Entry tickets & camera charges"],
@@ -159,7 +159,7 @@ export default function AdminDashboardPage() {
           </div>
           <div>
             <h1 className="text-xl font-serif font-black tracking-wide">
-              STAR TOURISM ADMIN
+              SHA TOURISM ADMIN
             </h1>
             <span className="text-[11px] text-[#ECD29E]">
               Signed in as {adminUser?.name || "Super Administrator"}

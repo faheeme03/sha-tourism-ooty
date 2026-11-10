@@ -30,7 +30,7 @@ export default function ContactPage() {
   };
 
   const handleWhatsAppDirect = () => {
-    const text = `*STAR TOURISM – Contact Form Enquiry*\n\n*Name:* ${contactForm.name}\n*Phone:* ${contactForm.phone}\n*Subject:* ${contactForm.subject}\n*Message:* ${contactForm.message}`;
+    const text = `*SHA TOURISM – Contact Form Enquiry*\n\n*Name:* ${contactForm.name}\n*Phone:* ${contactForm.phone}\n*Subject:* ${contactForm.subject}\n*Message:* ${contactForm.message}`;
     window.open(buildWhatsAppUrl(text), '_blank');
   };
 
@@ -40,13 +40,13 @@ export default function ContactPage() {
         
         <SectionHeader
           badge="Get in Touch"
-          title="Contact Star Tourism Ooty"
+          title="Contact Sha Tourism Ooty"
           subtitle="Have questions about our packages, hotel bookings, or hill cabs? Our local Ooty desk is ready to assist you."
         />
 
         <DocumentNoticeBanner
           title="Contact Information Verification"
-          message="Business address, local landline, and specific desk locations are configured as standard placeholders. These can be modified directly in the Admin Panel or updated automatically when the official Star Tourism document is provided."
+          message="Business address, local landline, and specific desk locations are configured as standard placeholders. These can be modified directly in the Admin Panel or updated automatically when the official Sha Tourism document is provided."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-8">
@@ -117,7 +117,7 @@ export default function ContactPage() {
               {/* Direct WhatsApp Callout */}
               <div className="pt-4 border-t border-slate-100">
                 <a
-                  href={buildWhatsAppUrl("Hello Star Tourism! I have an inquiry about Ooty packages.")}
+                  href={buildWhatsAppUrl("Hello Sha Tourism! I have an inquiry about Ooty packages.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-bold shadow-md transition-all"
@@ -130,7 +130,7 @@ export default function ContactPage() {
 
             {/* Social Media Links */}
             <div className="p-6 rounded-3xl bg-white border border-slate-200/80 shadow-xs flex items-center justify-between">
-              <span className="text-xs font-bold text-slate-700">Follow Star Tourism:</span>
+              <span className="text-xs font-bold text-slate-700">Follow Sha Tourism:</span>
               <div className="flex items-center gap-3">
                 <a href={BUSINESS_CONFIG.social.facebook} target="_blank" rel="noreferrer" className="p-2.5 rounded-full bg-slate-100 hover:bg-emerald-50 text-slate-700 hover:text-[#0F382A] transition-colors">
                   <Facebook className="w-4 h-4" />
@@ -162,7 +162,7 @@ export default function ContactPage() {
                   <CheckCircle2 className="w-12 h-12 text-emerald-600 mx-auto" />
                   <h4 className="text-xl font-bold text-emerald-950">Thank You for Reaching Out!</h4>
                   <p className="text-xs sm:text-sm text-emerald-800 leading-relaxed max-w-md mx-auto">
-                    Your message has been delivered to the Star Tourism desk. You can also send this inquiry directly to our WhatsApp support.
+                    Your message has been delivered to the Sha Tourism desk. You can also send this inquiry directly to our WhatsApp support.
                   </p>
                   <button
                     onClick={handleWhatsAppDirect}
@@ -274,14 +274,14 @@ export default function ContactPage() {
               <div className="flex items-center justify-between">
                 <h4 className="font-serif font-bold text-slate-900 flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-[#C5A059]" />
-                  <span>Star Tourism Location (Ooty, Nilgiris)</span>
+                  <span>Sha Tourism Location (Ooty, Nilgiris)</span>
                 </h4>
                 <span className="text-[11px] text-slate-400">Charing Cross Landmark</span>
               </div>
               
               <div className="w-full h-64 rounded-2xl overflow-hidden border border-slate-200 relative bg-slate-100">
                 <iframe
-                  title="Star Tourism Ooty Location Map"
+                  title="Sha Tourism Ooty Location Map"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15651.109855523956!2d76.69539325!3d11.4118485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8bd84c042308d%3A0x8698fc1a89f81ea7!2sOoty%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                   width="100%"
                   height="100%"

@@ -34,7 +34,7 @@ const INITIAL_PACKAGES = [
       {
         day: 1,
         title: "Arrival in Ooty & Town Sightseeing",
-        description: "Warm welcome in Ooty by Star Tourism representative. Check into hotel and refresh. Post breakfast, proceed to the Government Botanical Garden, followed by Ooty Lake for boating.",
+        description: "Warm welcome in Ooty by Sha Tourism representative. Check into hotel and refresh. Post breakfast, proceed to the Government Botanical Garden, followed by Ooty Lake for boating.",
         meals: "Breakfast (if morning arrival), Welcome tea"
       },
       {
@@ -202,11 +202,11 @@ const INITIAL_CABS = [
 ];
 
 const INITIAL_SETTINGS = {
-  brandName: "STAR TOURISM",
+  brandName: "SHA TOURISM",
   whatsappNumber: "919488000000",
   displayWhatsapp: "+91 94880 00000",
   phone: "+91 94880 00000",
-  email: "info@startourismooty.com",
+  email: "info@shatourismooty.com",
   fullAddress: "Commercial Road, Near Charing Cross, Ooty, The Nilgiris, Tamil Nadu - 643001"
 };
 

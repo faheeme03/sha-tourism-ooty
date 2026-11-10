@@ -2,7 +2,7 @@
 // Editable via Admin Dashboard and configurable here as the master fallback.
 
 export const BUSINESS_CONFIG = {
-  brandName: "STAR TOURISM",
+  brandName: "SHA TOURISM",
   tagline: "Queen of Hill Stations Holiday Specialists",
   location: "Ooty, The Nilgiris, Tamil Nadu, India",
   fullAddress: "Commercial Road, Near Charing Cross, Ooty, The Nilgiris, Tamil Nadu - 643001",
@@ -15,17 +15,17 @@ export const BUSINESS_CONFIG = {
   // Phone & Email placeholders
   phone: "+91 94880 00000",
   altPhone: "+91 423 244 0000",
-  email: "info@startourismooty.com",
-  bookingEmail: "bookings@startourismooty.com",
+  email: "info@shatourismooty.com",
+  bookingEmail: "bookings@shatourismooty.com",
   
   // Operating Hours
   hours: "Monday – Sunday: 7:00 AM – 10:30 PM",
   
   // Social links
   social: {
-    instagram: "https://instagram.com/startourismooty",
-    facebook: "https://facebook.com/startourismooty",
-    youtube: "https://youtube.com/@startourismooty"
+    instagram: "https://instagram.com/shatourismooty",
+    facebook: "https://facebook.com/shatourismooty",
+    youtube: "https://youtube.com/@shatourismooty"
   }
 };
 
@@ -46,7 +46,7 @@ export const buildWhatsAppUrl = (text, customNumber = null) => {
  */
 export const getPackageWhatsAppMessage = (pkg, guestDetails = {}) => {
   const lines = [
-    `*STAR TOURISM – Tour Package Enquiry* 🌲⭐`,
+    `*SHA TOURISM – Tour Package Enquiry* 🌲⭐`,
     ``,
     `*Package:* ${pkg.name || "Custom Ooty Package"}`,
     `*Duration:* ${pkg.duration || "N/A"}`,
@@ -56,7 +56,7 @@ export const getPackageWhatsAppMessage = (pkg, guestDetails = {}) => {
     guestDetails.name ? `*Customer Name:* ${guestDetails.name}` : '',
     guestDetails.notes ? `*Custom Notes:* ${guestDetails.notes}` : '',
     ``,
-    `Hello Star Tourism team! I am interested in this package. Please share availability, final pricing, and detailed itinerary. Thank you!`
+    `Hello Sha Tourism team! I am interested in this package. Please share availability, final pricing, and detailed itinerary. Thank you!`
   ].filter(line => line !== '');
 
   return lines.join('\n');
@@ -67,7 +67,7 @@ export const getPackageWhatsAppMessage = (pkg, guestDetails = {}) => {
  */
 export const getHotelWhatsAppMessage = (hotel, details = {}) => {
   const lines = [
-    `*STAR TOURISM – Hotel & Resort Enquiry* 🏨✨`,
+    `*SHA TOURISM – Hotel & Resort Enquiry* 🏨✨`,
     ``,
     `*Hotel Name:* ${hotel.name}`,
     `*Room Category:* ${details.roomType || hotel.roomTypes?.[0]?.name || "Standard Luxury Room"}`,
@@ -77,7 +77,7 @@ export const getHotelWhatsAppMessage = (hotel, details = {}) => {
     details.guests ? `*Guests & Rooms:* ${details.guests} guests` : '',
     details.name ? `*Name:* ${details.name}` : '',
     ``,
-    `Kindly check room availability and share the best package rate with Star Tourism. Thank you!`
+    `Kindly check room availability and share the best package rate with Sha Tourism. Thank you!`
   ].filter(line => line !== '');
 
   return lines.join('\n');
@@ -88,7 +88,7 @@ export const getHotelWhatsAppMessage = (hotel, details = {}) => {
  */
 export const getCabWhatsAppMessage = (cab, details = {}) => {
   const lines = [
-    `*STAR TOURISM – Cab & Travel Services Enquiry* 🚖🏔️`,
+    `*SHA TOURISM – Cab & Travel Services Enquiry* 🚖🏔️`,
     ``,
     `*Vehicle Type:* ${cab.name} (${cab.capacity})`,
     `*AC Type:* ${cab.acType || 'AC / Climate Control'}`,
@@ -109,7 +109,7 @@ export const getCabWhatsAppMessage = (cab, details = {}) => {
  */
 export const getCustomTripWhatsAppMessage = (formData) => {
   return [
-    `*STAR TOURISM – Custom Ooty Holiday Planner* 🌟`,
+    `*SHA TOURISM – Custom Ooty Holiday Planner* 🌟`,
     ``,
     `*Customer Name:* ${formData.name || 'Traveler'}`,
     `*Mobile:* ${formData.phone || 'N/A'}`,
@@ -121,6 +121,6 @@ export const getCustomTripWhatsAppMessage = (formData) => {
     `*Cab Rental Requirement:* ${formData.cabRequired ? 'Yes (Local/Outstation)' : 'No'}`,
     formData.additionalNotes ? `*Special Requests:* ${formData.additionalNotes}` : '',
     ``,
-    `Kindly craft a tailored Ooty holiday itinerary and quotation for our trip. Look forward to exploring Ooty with Star Tourism!`
+    `Kindly craft a tailored Ooty holiday itinerary and quotation for our trip. Look forward to exploring Ooty with Sha Tourism!`
   ].filter(Boolean).join('\n');
 };

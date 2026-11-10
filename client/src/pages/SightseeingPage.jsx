@@ -104,7 +104,7 @@ export default function SightseeingPage() {
 
                   <div className="flex items-center gap-2">
                     <a
-                      href={buildWhatsAppUrl(`Hello Star Tourism! I want to visit ${dest.name}. What is the cab sightseeing tariff?`)}
+                      href={buildWhatsAppUrl(`Hello Sha Tourism! I want to visit ${dest.name}. What is the cab sightseeing tariff?`)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="px-4 py-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-[#0F382A] text-xs font-bold flex items-center gap-1.5 border border-emerald-200"

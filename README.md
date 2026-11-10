@@ -1,12 +1,12 @@
-# 🌲 STAR TOURISM – PREMIUM OOTY TOURISM & TRAVEL BOOKING PLATFORM
+# 🌲 SHA TOURISM – PREMIUM OOTY TOURISM & TRAVEL BOOKING PLATFORM
 
-A modern, high-conversion, responsive full-stack tourism web application designed specifically for **STAR TOURISM**, based in **Ooty, Nilgiris, Tamil Nadu, India**.
+A modern, high-conversion, responsive full-stack tourism web application designed specifically for **SHA TOURISM**, based in **Ooty, Nilgiris, Tamil Nadu, India**.
 
 ---
 
 ## 🌟 Executive Overview & Brand Identity
 
-- **Brand Name:** STAR TOURISM
+- **Brand Name:** SHA TOURISM
 - **Location:** Ooty, The Nilgiris, Tamil Nadu, India (Charing Cross / Commercial Road)
 - **Tagline:** Discover the Queen of Hill Stations – Ooty
 - **Color Palette:**
@@ -41,7 +41,7 @@ A modern, high-conversion, responsive full-stack tourism web application designe
 ## 📁 Project Directory Structure
 
 ```
-star-tourism/
+sha-tourism/
 ├── package.json                   # Root orchestrator scripts
 ├── README.md                      # Project documentation
 ├── client/                        # React Frontend (Vite + Tailwind CSS v4)
@@ -49,7 +49,7 @@ star-tourism/
 │   ├── vite.config.js             # Vite configuration with API proxy
 │   ├── package.json
 │   ├── public/
-│   │   └── favicon.svg            # Custom Star Tourism SVG Icon
+│   │   └── favicon.svg            # Custom Sha Tourism SVG Icon
 │   └── src/
 │       ├── main.jsx               # React entry point
 │       ├── App.jsx                # Router & Global Layout configuration
@@ -107,7 +107,7 @@ star-tourism/
 
 ### Step 1: Open the Project Directory
 ```bash
-cd /Users/faheem/.gemini/antigravity/scratch/star-tourism
+cd /Users/faheem/.gemini/antigravity/scratch/sha-tourism
 ```
 
 ### Step 2: Running in Production Mode (Unified Backend + Frontend)
@@ -138,7 +138,7 @@ To run frontend and backend with hot reload:
 
 - **Login URL:** `http://localhost:5000/admin` (or `http://localhost:5173/admin` in dev mode)
 - **Default Username:** `admin`
-- **Default Password:** `StarOoty2026!`
+- **Default Password:** `ShaOoty2026!`
 
 *(Credentials can be changed anytime in `server/.env` via `ADMIN_USER` and `ADMIN_PASSWORD`)*
 
@@ -155,10 +155,10 @@ NODE_ENV=production
 
 # Admin Credentials
 ADMIN_USER=admin
-ADMIN_PASSWORD=StarOoty2026!
+ADMIN_PASSWORD=ShaOoty2026!
 
 # JWT Secret
-JWT_SECRET=star_tourism_ooty_super_secret_jwt_key_2026
+JWT_SECRET=sha_tourism_ooty_super_secret_jwt_key_2026
 
 # Central WhatsApp Business Number
 DEFAULT_WHATSAPP_NUMBER=919488000000

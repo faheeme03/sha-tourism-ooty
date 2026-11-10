@@ -8,7 +8,7 @@ router.post('/', (req, res) => {
   const enquiries = readCollection('enquiries', []);
   const newEnquiry = {
     ...req.body,
-    id: req.body.enquiryId || `STAR-${Date.now().toString().slice(-6)}`,
+    id: req.body.enquiryId || `SHA-${Date.now().toString().slice(-6)}`,
     createdAt: new Date().toISOString(),
     status: req.body.status || 'New'
   };

@@ -4,10 +4,10 @@ const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [adminToken, setAdminToken] = useState(() => {
-    return localStorage.getItem('star_admin_token') || null;
+    return localStorage.getItem('sha_admin_token') || null;
   });
   const [adminUser, setAdminUser] = useState(() => {
-    const saved = localStorage.getItem('star_admin_user');
+    const saved = localStorage.getItem('sha_admin_user');
     return saved ? JSON.parse(saved) : null;
   });
 
@@ -21,8 +21,8 @@ export function AuthProvider({ children }) {
       });
       const data = await res.json();
       if (res.ok && data.token) {
-        localStorage.setItem('star_admin_token', data.token);
-        localStorage.setItem('star_admin_user', JSON.stringify(data.user));
+        localStorage.setItem('sha_admin_token', data.token);
+        localStorage.setItem('sha_admin_user', JSON.stringify(data.user));
         setAdminToken(data.token);
         setAdminUser(data.user);
         return { success: true };
@@ -31,12 +31,12 @@ export function AuthProvider({ children }) {
       console.warn("Backend auth fetch failed, falling back to local admin check", err);
     }
 
-    // Default admin fallback: admin / StarOoty2026!
-    if ((username === 'admin' || username === 'star') && (password === 'StarOoty2026!' || password === 'admin123')) {
-      const token = 'mock_star_token_' + Date.now();
-      const user = { username: 'admin', role: 'Super Administrator', name: 'Star Tourism Manager' };
-      localStorage.setItem('star_admin_token', token);
-      localStorage.setItem('star_admin_user', JSON.stringify(user));
+    // Default admin fallback: admin / ShaOoty2026!
+    if ((username === 'admin' || username === 'sha') && (password === 'ShaOoty2026!' || password === 'admin123')) {
+      const token = 'mock_sha_token_' + Date.now();
+      const user = { username: 'admin', role: 'Super Administrator', name: 'Sha Tourism Manager' };
+      localStorage.setItem('sha_admin_token', token);
+      localStorage.setItem('sha_admin_user', JSON.stringify(user));
       setAdminToken(token);
       setAdminUser(user);
       return { success: true };
@@ -46,8 +46,8 @@ export function AuthProvider({ children }) {
   };
 
   const logout = () => {
-    localStorage.removeItem('star_admin_token');
-    localStorage.removeItem('star_admin_user');
+    localStorage.removeItem('sha_admin_token');
+    localStorage.removeItem('sha_admin_user');
     setAdminToken(null);
     setAdminUser(null);
   };

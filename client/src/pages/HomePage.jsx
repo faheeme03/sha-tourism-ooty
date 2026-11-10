@@ -19,7 +19,7 @@ export default function HomePage() {
       {/* 3. Our Services */}
       <ServicesGrid />
 
-      {/* 4. Why Choose Star Tourism */}
+      {/* 4. Why Choose Sha Tourism */}
       <WhyChooseUs />
 
       {/* 5. Ooty Destinations Gallery */}

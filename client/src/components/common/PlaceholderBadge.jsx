@@ -3,7 +3,7 @@ import { AlertCircle, FileText } from 'lucide-react';
 
 export default function PlaceholderBadge({ 
   text = "Awaiting Document Confirmation", 
-  tooltip = "Structured placeholder awaiting Star Tourism official document synchronization",
+  tooltip = "Structured placeholder awaiting Sha Tourism official document synchronization",
   size = "sm" 
 }) {
   const isSm = size === "sm";
@@ -28,7 +28,7 @@ export function DocumentNoticeBanner({ title = "Document Data Verification Notic
       <div>
         <p className="font-semibold text-amber-900">{title}</p>
         <p className="text-amber-800/90 mt-0.5 leading-relaxed">
-          {message || "The packages and rates displayed are authentic regional models prepared for Star Tourism. You can synchronize or update them at any time via the Admin Dashboard or by providing the official business document."}
+          {message || "The packages and rates displayed are authentic regional models prepared for Sha Tourism. You can synchronize or update them at any time via the Admin Dashboard or by providing the official business document."}
         </p>
       </div>
     </div>

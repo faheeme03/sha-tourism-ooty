@@ -69,7 +69,7 @@ export default function BookingEnquiryPage() {
 
     const payload = {
       ...formData,
-      enquiryId: `STAR-${Date.now().toString().slice(-6)}`,
+      enquiryId: `SHA-${Date.now().toString().slice(-6)}`,
       createdAt: new Date().toISOString(),
       status: 'New'
     };
@@ -267,7 +267,7 @@ export default function BookingEnquiryPage() {
                     onChange={(e) => setFormData({ ...formData, selectedPackage: e.target.value })}
                     className="w-full p-2.5 rounded-lg border border-stone-300 text-xs sm:text-sm outline-none bg-white"
                   >
-                    <option value="">-- Let Star Tourism suggest the best package --</option>
+                    <option value="">-- Let Sha Tourism suggest the best package --</option>
                     {TOUR_PACKAGES.map((pkg) => (
                       <option key={pkg.id} value={pkg.name}>
                         {pkg.name} ({pkg.duration})

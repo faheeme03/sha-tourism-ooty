@@ -1,9 +1,9 @@
-// STAR TOURISM - SEED & PLACEHOLDER DATASET
+// SHA TOURISM - SEED & PLACEHOLDER DATASET
 // All items are clearly flagged with [Awaiting Document Confirmation] where actual values
 // will be synchronized once the official business document is uploaded.
 
 export const DATA_DISCLAIMER = {
-  notice: "All package itineraries, hotel listings, vehicle tariffs and reviews below are structured placeholders and authentic Ooty regional models awaiting final synchronization with Star Tourism's official business document.",
+  notice: "All package itineraries, hotel listings, vehicle tariffs and reviews below are structured placeholders and authentic Ooty regional models awaiting final synchronization with Sha Tourism's official business document.",
   badgeText: "Awaiting Document Confirmation"
 };
 
@@ -51,7 +51,7 @@ export const TOUR_PACKAGES = [
       {
         day: 1,
         title: "Arrival in Ooty & Town Sightseeing",
-        description: "Warm welcome in Ooty by Star Tourism representative. Check into hotel and refresh. Post breakfast, proceed to the Government Botanical Garden with 1,000+ exotic floral species, followed by picturesque Ooty Lake for boating. Spend the evening shopping for homemade Ooty chocolates, Nilgiri oils, and spices in Commercial Road.",
+        description: "Warm welcome in Ooty by Sha Tourism representative. Check into hotel and refresh. Post breakfast, proceed to the Government Botanical Garden with 1,000+ exotic floral species, followed by picturesque Ooty Lake for boating. Spend the evening shopping for homemade Ooty chocolates, Nilgiri oils, and spices in Commercial Road.",
         meals: "Breakfast (if morning arrival), Welcome tea"
       },
       {
@@ -66,7 +66,7 @@ export const TOUR_PACKAGES = [
       "Daily wholesome South & North Indian breakfast",
       "All transfers & sightseeing in dedicated private cab",
       "Toll, parking fees, and driver allowances",
-      "Star Tourism local travel assistance and 24/7 hotline support"
+      "Sha Tourism local travel assistance and 24/7 hotline support"
     ],
     exclusions: [
       "Entry tickets to Botanical Garden, Rose Garden, Boating fees",
@@ -146,7 +146,7 @@ export const TOUR_PACKAGES = [
       "Daily breakfast at the resort restaurant",
       "Entire 3-day sightseeing in dedicated private sedan",
       "Driver allowance, parking, state permits, and fuel",
-      "Star Tourism personalized concierge service"
+      "Sha Tourism personalized concierge service"
     ],
     exclusions: [
       "Heritage toy train ride tickets (subject to IRCTC availability)",
@@ -344,7 +344,7 @@ export const TOUR_PACKAGES = [
       "Choice of 4-Star / 5-Star Heritage resorts and colonial villas",
       "Exclusive offbeat destinations: Avalanche, Emerald Lake, Kotagiri",
       "Private premium cab with customized departure points (Bangalore / Coimbatore)",
-      "Dedicated Star Tourism tour curator"
+      "Dedicated Sha Tourism tour curator"
     ],
     hotelAccommodation: {
       type: "Choice of Colonial Heritage Bungalow or 5-Star Mountain Resort",
@@ -764,7 +764,7 @@ export const TESTIMONIALS_DATA = [
     rating: 5,
     isSamplePlaceholder: true,
     placeholderBadge: "Sample Review Placeholder (Awaiting Document)",
-    comment: "Our honeymoon in Ooty with Star Tourism was pure magic! The tea estate cottage with fireplace was mesmerizing. Our driver was extremely polite and showed us spots away from tourist crowds. Highly recommended!",
+    comment: "Our honeymoon in Ooty with Sha Tourism was pure magic! The tea estate cottage with fireplace was mesmerizing. Our driver was extremely polite and showed us spots away from tourist crowds. Highly recommended!",
     date: "October 2026"
   },
   {
@@ -786,7 +786,7 @@ export const TESTIMONIALS_DATA = [
     rating: 5,
     isSamplePlaceholder: true,
     placeholderBadge: "Sample Review Placeholder (Awaiting Document)",
-    comment: "We booked the 12-seater Tempo Traveller and private villa. Campfire night in Ooty cold with hot food was epic. Star Tourism delivered everything promised at a very transparent price.",
+    comment: "We booked the 12-seater Tempo Traveller and private villa. Campfire night in Ooty cold with hot food was epic. Sha Tourism delivered everything promised at a very transparent price.",
     date: "November 2026"
   }
 ];

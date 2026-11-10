@@ -64,7 +64,7 @@ export default function PackageDetailModal({ pkg, onClose }) {
           {pkg.isAwaitingDocument && (
             <DocumentNoticeBanner 
               title="Official Business Document Synchronization"
-              message="The detailed day-wise itinerary, inclusions, and tariffs shown below represent the verified Ooty model for this tour. Any specific custom amendments from Star Tourism's uploaded document will instantly synchronize across this view."
+              message="The detailed day-wise itinerary, inclusions, and tariffs shown below represent the verified Ooty model for this tour. Any specific custom amendments from Sha Tourism's uploaded document will instantly synchronize across this view."
             />
           )}
 

@@ -8,7 +8,7 @@ const connectDB = async () => {
   const mongoUri = process.env.MONGODB_URI;
 
   if (!mongoUri) {
-    console.log('ℹ️  No MONGODB_URI detected in environment. Using Star Tourism Autonomous Local JSON Storage Engine.');
+    console.log('ℹ️  No MONGODB_URI detected in environment. Using SHA Tourism Autonomous Local JSON Storage Engine.');
     return false;
   }
 

@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-const JWT_SECRET = process.env.JWT_SECRET || 'star_tourism_secret_key_ooty_2026';
+const JWT_SECRET = process.env.JWT_SECRET || 'sha_tourism_secret_key_ooty_2026';
 
 const requireAdmin = (req, res, next) => {
   const authHeader = req.headers.authorization;
@@ -11,7 +11,7 @@ const requireAdmin = (req, res, next) => {
 
   const token = authHeader.replace(/^Bearer\s+/, '');
 
-  if (token.startsWith('mock_star_token_')) {
+  if (token.startsWith('mock_sha_token_') || token.startsWith('mock_star_token_')) {
     req.user = { username: 'admin', role: 'admin' };
     return next();
   }
