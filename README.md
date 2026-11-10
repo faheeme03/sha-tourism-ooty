@@ -111,21 +111,23 @@ cd /Users/faheem/.gemini/antigravity/scratch/sha-tourism
 ```
 
 ### Step 2: Running in Production Mode (Unified Backend + Frontend)
-The frontend is already built inside `client/dist`. You can start the server immediately:
+The frontend is already built inside `client/dist`. Start the server on port 5001:
 ```bash
 npm start
 ```
-Open **[http://localhost:5000](http://localhost:5000)** in your browser!
+Open **[http://localhost:5001](http://localhost:5001)** in your browser!
+
+*(Note: We use port `5001` because on macOS, port `5000` is reserved by Apple AirPlay Receiver/ControlCenter, which causes a blank white screen if used.)*
 
 ### Step 3: Running in Development Mode (Hot Reload)
 To run frontend and backend with hot reload:
 
-1. **Terminal 1 (Backend API):**
+1. **Terminal 1 (Backend API on :5001):**
    ```bash
    cd server
    node server.js
    ```
-2. **Terminal 2 (React Vite Client):**
+2. **Terminal 2 (React Vite Client on :5173):**
    ```bash
    cd client
    npm run dev

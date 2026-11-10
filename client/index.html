@@ -11,8 +11,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-[#FBF9F5] text-slate-900 font-sans antialiased selection:bg-[#C5A059] selection:text-white">
-    <div id="root"></div>
+  <body class="bg-[#faf9f6] text-stone-900 font-sans antialiased selection:bg-[#B89047] selection:text-white">
+    <div id="root">
+      <!-- Fallback while React loads or if opened as file:/// -->
+      <div style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #faf9f6; color: #1c1917; text-align: center; padding: 20px;">
+        <div style="width: 40px; height: 40px; border-radius: 10px; background: #12372A; color: #CBA75C; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 14px; margin-bottom: 16px;">SHA</div>
+        <h2 style="font-family: Georgia, serif; font-size: 24px; margin: 0 0 8px 0; color: #12372A;">SHA TOURISM</h2>
+        <p style="font-size: 14px; color: #78716c; margin: 0 0 16px 0;">Loading Ooty Vacation & Travel Portal...</p>
+        <noscript>
+          <p style="color: #b91c1c; font-size: 13px;">JavaScript is required to view this booking website.</p>
+        </noscript>
+      </div>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
