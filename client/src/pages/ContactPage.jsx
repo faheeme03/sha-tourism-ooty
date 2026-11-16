@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { 
-  Phone, Mail, MapPin, Clock, MessageSquare, Send, 
+  Phone, MapPin, Clock, MessageSquare, Send, 
   CheckCircle2, ExternalLink, Instagram, Facebook, Youtube 
 } from 'lucide-react';
 import SectionHeader from '../components/common/SectionHeader';
-import { DocumentNoticeBanner } from '../components/common/PlaceholderBadge';
 import { BUSINESS_CONFIG, buildWhatsAppUrl } from '../config/whatsapp';
 
 export default function ContactPage() {
@@ -44,11 +43,6 @@ export default function ContactPage() {
           subtitle="Have questions about our packages, hotel bookings, or hill cabs? Our local Ooty desk is ready to assist you."
         />
 
-        <DocumentNoticeBanner
-          title="Contact Information Verification"
-          message="Business address, local landline, and specific desk locations are configured as standard placeholders. These can be modified directly in the Admin Panel or updated automatically when the official Sha Tourism document is provided."
-        />
-
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-8">
           
           {/* Left Column: Direct Contact Information */}
@@ -65,12 +59,9 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <span className="font-bold text-slate-900 block">Office Address</span>
-                    <p className="text-slate-600 text-xs sm:text-sm mt-0.5 leading-relaxed">
+                    <p className="text-slate-600 text-xs sm:text-sm mt-0.5 leading-relaxed font-medium">
                       {BUSINESS_CONFIG.fullAddress}
                     </p>
-                    <span className="text-[10px] text-amber-700 bg-amber-50 px-2 py-0.5 rounded mt-1 inline-block">
-                      [Placeholder - Near Charing Cross Landmark]
-                    </span>
                   </div>
                 </div>
 
@@ -83,20 +74,7 @@ export default function ContactPage() {
                     <a href={`tel:${BUSINESS_CONFIG.phone}`} className="text-slate-700 text-xs sm:text-sm hover:text-[#0F382A] block font-semibold">
                       {BUSINESS_CONFIG.displayWhatsapp}
                     </a>
-                    <span className="text-slate-500 text-xs block">Landline: {BUSINESS_CONFIG.altPhone}</span>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-emerald-50 text-[#0F382A] flex items-center justify-center shrink-0">
-                    <Mail className="w-5 h-5 text-[#C5A059]" />
-                  </div>
-                  <div>
-                    <span className="font-bold text-slate-900 block">Email Inquiries</span>
-                    <a href={`mailto:${BUSINESS_CONFIG.email}`} className="text-slate-700 text-xs sm:text-sm hover:text-[#0F382A] block">
-                      {BUSINESS_CONFIG.email}
-                    </a>
-                    <span className="text-slate-500 text-xs block">Bookings: {BUSINESS_CONFIG.bookingEmail}</span>
+                    <span className="text-emerald-700 text-xs block font-medium">Direct Booking & Instant WhatsApp Response</span>
                   </div>
                 </div>
 
@@ -214,12 +192,11 @@ export default function ContactPage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-1">
-                        Email Address *
+                        Email Address (Optional)
                       </label>
                       <input
                         type="email"
-                        required
-                        placeholder="e.g. ananya@example.com"
+                        placeholder="e.g. guest@example.com"
                         value={contactForm.email}
                         onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
                         className="w-full p-3 rounded-xl border border-slate-300 text-sm outline-none focus:border-emerald-600 bg-slate-50"

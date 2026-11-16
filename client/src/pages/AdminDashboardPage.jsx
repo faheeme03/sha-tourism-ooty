@@ -602,13 +602,13 @@ export default function AdminDashboardPage() {
 
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
-                    Public Contact Email
+                    Public Contact Email (Optional)
                   </label>
                   <input
                     type="email"
-                    required
                     value={businessSettings.email}
                     onChange={(e) => setBusinessSettings({ ...businessSettings, email: e.target.value })}
+                    placeholder="Optional - leave empty if using WhatsApp only"
                     className="w-full p-3 rounded-xl border border-slate-300 text-sm outline-none focus:border-emerald-600 bg-slate-50"
                   />
                 </div>

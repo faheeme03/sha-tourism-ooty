@@ -64,9 +64,6 @@ export default function Footer() {
             <p className="text-xs font-semibold text-stone-800">
               WhatsApp: {BUSINESS_CONFIG.displayWhatsapp}
             </p>
-            <p className="text-xs text-stone-500">
-              {BUSINESS_CONFIG.email}
-            </p>
           </div>
 
         </div>

@@ -4,19 +4,19 @@
 export const BUSINESS_CONFIG = {
   brandName: "SHA TOURISM",
   tagline: "Queen of Hill Stations Holiday Specialists",
-  location: "Ooty, The Nilgiris, Tamil Nadu, India",
-  fullAddress: "Commercial Road, Near Charing Cross, Ooty, The Nilgiris, Tamil Nadu - 643001",
+  location: "Old Ooty, The Nilgiris, Tamil Nadu, India",
+  fullAddress: "183, Missionary Hills, Old Ooty, Tamil Nadu - 643001",
   
   // WhatsApp Configuration (Default configurable placeholder)
   // Format: Country code without '+' or special symbols, e.g. 919876543210
   whatsappNumber: "919159627527", 
   displayWhatsapp: "+91 91596 27527",
   
-  // Phone & Email placeholders
+  // Phone placeholders
   phone: "+91 91596 27527",
-  altPhone: "+91 423 244 0000",
-  email: "info@shatourismooty.com",
-  bookingEmail: "bookings@shatourismooty.com",
+  altPhone: "+91 91596 27527",
+  email: "",
+  bookingEmail: "",
   
   // Operating Hours
   hours: "Monday – Sunday: 7:00 AM – 10:30 PM",
