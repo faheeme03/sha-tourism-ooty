@@ -9,11 +9,11 @@ export const BUSINESS_CONFIG = {
   
   // WhatsApp Configuration (Default configurable placeholder)
   // Format: Country code without '+' or special symbols, e.g. 919876543210
-  whatsappNumber: "919488000000", 
-  displayWhatsapp: "+91 94880 00000",
+  whatsappNumber: "919159627527", 
+  displayWhatsapp: "+91 91596 27527",
   
   // Phone & Email placeholders
-  phone: "+91 94880 00000",
+  phone: "+91 91596 27527",
   altPhone: "+91 423 244 0000",
   email: "info@shatourismooty.com",
   bookingEmail: "bookings@shatourismooty.com",

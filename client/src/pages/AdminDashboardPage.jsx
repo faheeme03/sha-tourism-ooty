@@ -576,7 +576,7 @@ export default function AdminDashboardPage() {
               >
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
-                    WhatsApp Direct Dial Number (e.g. 919488000000 without +)
+                    WhatsApp Direct Dial Number (e.g. 919159627527 without +)
                   </label>
                   <input
                     type="text"

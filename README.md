@@ -163,7 +163,7 @@ ADMIN_PASSWORD=ShaOoty2026!
 JWT_SECRET=sha_tourism_ooty_super_secret_jwt_key_2026
 
 # Central WhatsApp Business Number
-DEFAULT_WHATSAPP_NUMBER=919488000000
+DEFAULT_WHATSAPP_NUMBER=919159627527
 ```
 
 ---

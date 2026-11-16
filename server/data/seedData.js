@@ -203,9 +203,9 @@ const INITIAL_CABS = [
 
 const INITIAL_SETTINGS = {
   brandName: "SHA TOURISM",
-  whatsappNumber: "919488000000",
-  displayWhatsapp: "+91 94880 00000",
-  phone: "+91 94880 00000",
+  whatsappNumber: "919159627527",
+  displayWhatsapp: "+91 91596 27527",
+  phone: "+91 91596 27527",
   email: "info@shatourismooty.com",
   fullAddress: "Commercial Road, Near Charing Cross, Ooty, The Nilgiris, Tamil Nadu - 643001"
 };
