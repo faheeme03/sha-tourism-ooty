@@ -12,7 +12,7 @@ const INITIAL_PACKAGES = [
     isPopular: true,
     isAwaitingDocument: true,
     documentBadge: "Awaiting Document Confirmation",
-    bannerImage: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1200&q=80",
+    bannerImage: "https://upload.wikimedia.org/wikipedia/commons/8/8a/The_Nilgiri_Mountain_Railway.jpg",
     shortDescription: "Ideal short weekend escape covering Ooty Lake, Botanical Garden, Doddabetta Peak, and sprawling tea plantations with comfortable stay & cab.",
     highlights: [
       "Panoramic views from Doddabetta Peak (8,650 ft)",
@@ -67,7 +67,7 @@ const INITIAL_PACKAGES = [
     isPopular: true,
     isAwaitingDocument: true,
     documentBadge: "Awaiting Document Confirmation",
-    bannerImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    bannerImage: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Government_Rose_Garden%2C_Ooty%2C_Tamil_Nadu%2C_India.jpg",
     shortDescription: "An enchanting romantic holiday featuring luxury tea estate stay, candle-light dinner, flower bed decoration, and private sightseeing in Ooty and Coonoor.",
     highlights: [
       "2 Nights in a romantic tea estate cottage with fireplace",
@@ -107,7 +107,7 @@ const INITIAL_PACKAGES = [
     isPopular: true,
     isAwaitingDocument: true,
     documentBadge: "Awaiting Document Confirmation",
-    bannerImage: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1200&q=80",
+    bannerImage: "https://upload.wikimedia.org/wikipedia/commons/5/52/Ooty_Lake_Boating.jpg",
     shortDescription: "A comprehensive family tour covering Ooty, Coonoor, Pykara, and Mudumalai Tiger Reserve with spacious family rooms and a private Innova/Ertiga.",
     highlights: [
       "Spacious family cottage stay with lawn and campfire",
@@ -146,7 +146,7 @@ const INITIAL_HOTELS = [
     rating: 4.9,
     reviewsCount: 76,
     isAwaitingDocument: true,
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/40/Fernhills_Palace%2C_Ooty.JPG",
     description: "Nestled amidst 30 acres of private rolling tea plantations, this colonial-era heritage retreat offers timeless luxury, crackling fireplaces, and tea garden views.",
     amenities: ["Fireplace in all rooms", "Panoramic Tea Garden Views", "Multi-Cuisine Restaurant", "Free High-Speed Wi-Fi"],
     roomTypes: [
@@ -164,7 +164,7 @@ const INITIAL_HOTELS = [
     rating: 4.8,
     reviewsCount: 54,
     isAwaitingDocument: true,
-    image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Pine_Forest_in_Ooty.jpg",
     description: "Charming wooden cottages surrounded by towering pine trees and misty morning clouds.",
     amenities: ["Wooden Finished Interior", "Room Heaters", "Balcony Valley Views", "In-house Kitchen"],
     roomTypes: [
@@ -184,7 +184,7 @@ const INITIAL_CABS = [
     acType: "AC / Climate Controlled",
     pricingNote: "Starting from ₹2,200/day for Ooty local sightseeing",
     isAwaitingDocument: true,
-    image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Maruti_Suzuki_Swift_Dzire.jpg",
     bestFor: "Couples, small families & solo travelers"
   },
   {
@@ -196,7 +196,7 @@ const INITIAL_CABS = [
     acType: "Dual AC Front & Rear",
     pricingNote: "Starting from ₹3,500/day for Ooty-Coonoor tour",
     isAwaitingDocument: true,
-    image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Toyota_Innova.jpg",
     bestFor: "Families, honeymooners wanting maximum comfort"
   }
 ];

@@ -134,7 +134,7 @@ export default function AdminDashboardPage() {
         rating: 5.0,
         reviewsCount: 10,
         isAwaitingDocument: false,
-        bannerImage: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1200&q=80",
+        bannerImage: "https://upload.wikimedia.org/wikipedia/commons/8/8a/The_Nilgiri_Mountain_Railway.jpg",
         shortDescription: lines.slice(1, 4).join(' ').slice(0, 180) || "Directly synchronized from Sha Tourism's official business document.",
         highlights: lines.slice(2, 6).map(l => l.replace(/^[#*-]\s*/, '')),
         inclusions: ["As per uploaded document specifications"],
@@ -285,7 +285,7 @@ export default function AdminDashboardPage() {
                       priceNote: 'per couple',
                       shortDescription: '',
                       highlights: [],
-                      bannerImage: 'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=800&q=80'
+                      bannerImage: 'https://upload.wikimedia.org/wikipedia/commons/8/8a/The_Nilgiri_Mountain_Railway.jpg'
                     });
                     setIsCreatingPackage(true);
                   }}

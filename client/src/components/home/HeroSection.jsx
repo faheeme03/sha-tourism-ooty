@@ -20,8 +20,8 @@ export default function HeroSection() {
             initial={{ scale: 1.08 }}
             animate={{ scale: 1.0 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=2000&q=85"
-            alt="Nilgiri tea hills in Ooty"
+            src="https://upload.wikimedia.org/wikipedia/commons/8/8a/The_Nilgiri_Mountain_Railway.jpg"
+            alt="Nilgiri Mountain Railway Toy Train passing through scenic Ooty tea hills"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/45 to-black/25"></div>

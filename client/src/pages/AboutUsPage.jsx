@@ -60,8 +60,8 @@ export default function AboutUsPage() {
           <div className="lg:col-span-6 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1000&q=80"
-                alt="Nilgiri mountains and tea workers in Ooty"
+                src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Nilgiri_Hills.jpg"
+                alt="Nilgiri mountains and rolling tea valleys in Ooty"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>

@@ -22,11 +22,11 @@ export const TOUR_PACKAGES = [
     isPopular: true,
     isAwaitingDocument: true,
     documentBadge: "Awaiting Document Confirmation",
-    bannerImage: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=1200&q=80",
+    bannerImage: "https://upload.wikimedia.org/wikipedia/commons/8/8a/The_Nilgiri_Mountain_Railway.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
+      "https://upload.wikimedia.org/wikipedia/commons/8/8a/The_Nilgiri_Mountain_Railway.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/d/da/Government_Botanical_garden_%2Cooty.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/5/52/Ooty_Lake_Boating.jpg"
     ],
     shortDescription: "Ideal short weekend escape covering Ooty Lake, Botanical Garden, Doddabetta Peak, and sprawling tea plantations with comfortable stay & cab.",
     highlights: [
@@ -94,11 +94,11 @@ export const TOUR_PACKAGES = [
     isPopular: true,
     isAwaitingDocument: true,
     documentBadge: "Awaiting Document Confirmation",
-    bannerImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    bannerImage: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Government_Rose_Garden%2C_Ooty%2C_Tamil_Nadu%2C_India.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80"
+      "https://upload.wikimedia.org/wikipedia/commons/c/c2/Government_Rose_Garden%2C_Ooty%2C_Tamil_Nadu%2C_India.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/3f/Pine_Forest_in_Ooty.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/b/bd/Coonoor_landscape_tea_plantations_and_forest.jpg"
     ],
     shortDescription: "An enchanting romantic holiday featuring luxury tea estate stay, candle-light dinner, flower bed decoration, and private sightseeing in Ooty and Coonoor.",
     highlights: [
@@ -173,11 +173,11 @@ export const TOUR_PACKAGES = [
     isPopular: true,
     isAwaitingDocument: true,
     documentBadge: "Awaiting Document Confirmation",
-    bannerImage: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=1200&q=80",
+    bannerImage: "https://upload.wikimedia.org/wikipedia/commons/5/52/Ooty_Lake_Boating.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80"
+      "https://upload.wikimedia.org/wikipedia/commons/5/52/Ooty_Lake_Boating.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/1/17/Pykara_waterfalls.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/a/a0/Doddabetta.jpg"
     ],
     shortDescription: "A comprehensive family tour covering Ooty, Coonoor, Pykara, and Mudumalai Tiger Reserve with spacious family rooms and a private Innova/Ertiga.",
     highlights: [
@@ -258,10 +258,11 @@ export const TOUR_PACKAGES = [
     isPopular: false,
     isAwaitingDocument: true,
     documentBadge: "Awaiting Document Confirmation",
-    bannerImage: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80",
+    bannerImage: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Coonoor_landscape_tea_plantations_and_forest.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
+      "https://upload.wikimedia.org/wikipedia/commons/b/bd/Coonoor_landscape_tea_plantations_and_forest.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/8/8a/The_Nilgiri_Mountain_Railway.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/d/da/Government_Botanical_garden_%2Cooty.jpg"
     ],
     shortDescription: "Tailored for college friends, corporate teams, and groups. Includes villa/dormitory stay, campfire with music, off-road viewpoint drive, and tempo traveller.",
     highlights: [
@@ -333,10 +334,11 @@ export const TOUR_PACKAGES = [
     isPopular: false,
     isAwaitingDocument: true,
     documentBadge: "Awaiting Document Confirmation",
-    bannerImage: "https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1200&q=80",
+    bannerImage: "https://upload.wikimedia.org/wikipedia/commons/1/17/Pykara_waterfalls.jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=800&q=80"
+      "https://upload.wikimedia.org/wikipedia/commons/1/17/Pykara_waterfalls.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/3/3f/Pine_Forest_in_Ooty.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/a/a4/Nilgiri_Hills.jpg"
     ],
     shortDescription: "Completely customizable holiday designed around your pace. Choose heritage colonial resorts, private plantation trails, Avalanche forest permits, and premium transfers.",
     highlights: [
@@ -406,7 +408,7 @@ export const HOTELS_RESORTS = [
     reviewsCount: 76,
     isAwaitingDocument: true,
     documentBadge: "Awaiting Document Confirmation",
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/40/Fernhills_Palace%2C_Ooty.JPG",
     description: "Nestled amidst 30 acres of private rolling tea plantations, this colonial-era heritage retreat offers timeless luxury, crackling fireplaces, and tea garden views.",
     amenities: [
       "Fireplace in all rooms",
@@ -433,7 +435,7 @@ export const HOTELS_RESORTS = [
     reviewsCount: 54,
     isAwaitingDocument: true,
     documentBadge: "Awaiting Document Confirmation",
-    image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Pine_Forest_in_Ooty.jpg",
     description: "Charming wooden cottages surrounded by towering pine trees and misty morning clouds. Perfect for couples and families wanting serene tranquility.",
     amenities: [
       "Wooden Finished Interior",
@@ -460,7 +462,7 @@ export const HOTELS_RESORTS = [
     reviewsCount: 89,
     isAwaitingDocument: true,
     documentBadge: "Awaiting Document Confirmation",
-    image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Ooty_Lake.jpg",
     description: "Located within 5 minutes walking distance of Ooty Lake and Boat House. Offers comfortable stays, excellent south and north Indian food, and sightseeing pick-up.",
     amenities: [
       "5 Mins from Ooty Lake",
@@ -479,7 +481,7 @@ export const HOTELS_RESORTS = [
     id: "hotel-queen-valley-resort",
     name: "Queen's Valley Royal Suites",
     slug: "queens-valley-royal-suites",
-    location: "Commercial Road / Charing Cross, Ooty",
+    location: "Old Ooty / Charing Cross, Ooty",
     category: "Town Center Premium",
     startingPrice: 3500,
     priceUnit: "per night",
@@ -487,7 +489,7 @@ export const HOTELS_RESORTS = [
     reviewsCount: 61,
     isAwaitingDocument: true,
     documentBadge: "Awaiting Document Confirmation",
-    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Coonoor_landscape_tea_plantations_and_forest.jpg",
     description: "Located right in the heart of Ooty near shopping markets, Botanical Garden, and restaurants. Perfect for travelers wanting instant access to town delights.",
     amenities: [
       "Heart of Ooty Town",
@@ -515,7 +517,7 @@ export const CAB_SERVICES = [
     pricingNote: "Starting from ₹2,200/day for Ooty local sightseeing",
     isAwaitingDocument: true,
     documentBadge: "Awaiting Document Confirmation",
-    image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Maruti_Suzuki_Swift_Dzire.jpg",
     bestFor: "Couples, small families & solo travelers",
     features: [
       "Well-maintained & sanitized vehicles",
@@ -540,7 +542,7 @@ export const CAB_SERVICES = [
     pricingNote: "Starting from ₹3,500/day for Ooty-Coonoor tour",
     isAwaitingDocument: true,
     documentBadge: "Awaiting Document Confirmation",
-    image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Toyota_Innova.jpg",
     bestFor: "Families, honeymooners wanting maximum comfort & luggage space",
     features: [
       "Spacious captain seats & supreme legroom",
@@ -565,7 +567,7 @@ export const CAB_SERVICES = [
     pricingNote: "Starting from ₹2,800/day for Ooty local",
     isAwaitingDocument: true,
     documentBadge: "Awaiting Document Confirmation",
-    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/c0/2019_Toyota_Innova_2.0_G_%28rear%29.jpg",
     bestFor: "Budget-conscious families and small groups",
     features: [
       "Flexible foldable seating",
@@ -590,7 +592,7 @@ export const CAB_SERVICES = [
     pricingNote: "Starting from ₹5,500/day for group tour",
     isAwaitingDocument: true,
     documentBadge: "Awaiting Document Confirmation",
-    image: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=800&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/43/Force_Traveller_Luxury.jpg",
     bestFor: "Large family reunions, college tours & corporate getaways",
     features: [
       "Reclining pushback seats with ample leg space",
@@ -614,7 +616,7 @@ export const OOTY_DESTINATIONS = [
     subtitle: "Heart of Queen of Hill Stations",
     category: "Lakes & Boating",
     timing: "9:00 AM – 6:00 PM",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/52/Ooty_Lake_Boating.jpg",
     description: "An artificial lake constructed in 1824 by John Sullivan, surrounded by eucalyptus groves. Enjoy paddle boating, row boating, motor boating, mini train rides, and horse riding along the scenic shoreline.",
     highlight: "Famous for scenic boat rides and sunset reflection",
     distance: "1.5 km from Ooty Railway Station"
@@ -625,7 +627,7 @@ export const OOTY_DESTINATIONS = [
     subtitle: "55 Acres of Verdant Floral Wonders",
     category: "Gardens & Flora",
     timing: "7:00 AM – 6:30 PM",
-    image: "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?auto=format&fit=crop&w=800&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/da/Government_Botanical_garden_%2Cooty.jpg",
     description: "Established in 1848, this terraced garden on the slopes of Doddabetta houses over a thousand species of exotic flowers, medicinal plants, a 20-million-year-old fossilized tree trunk, and Italian gardens.",
     highlight: "Home to the famous annual May Flower Show",
     distance: "2.5 km from Charing Cross"
@@ -636,7 +638,7 @@ export const OOTY_DESTINATIONS = [
     subtitle: "Highest Peak in the Nilgiris (8,650 ft)",
     category: "Mountain Peaks",
     timing: "8:30 AM – 6:00 PM",
-    image: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Doddabetta.jpg",
     description: "The highest vantage point in Tamil Nadu offering jaw-dropping 360-degree views of the mist-shrouded Nilgiri mountains, tea estates, and Coimbatore plains through the telescope house.",
     highlight: "Telescope House with 360° bird's eye panorama",
     distance: "9 km from Ooty town"
@@ -647,7 +649,7 @@ export const OOTY_DESTINATIONS = [
     subtitle: "Largest Rose Collection in India",
     category: "Gardens & Nature",
     timing: "8:30 AM – 6:00 PM",
-    image: "https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=800&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Government_Rose_Garden%2C_Ooty%2C_Tamil_Nadu%2C_India.jpg",
     description: "Spread across 5 curved terraces at Elk Hill, this spectacular garden features more than 20,000 rose cultivars including hybrid tea roses, miniature roses, ramblers, and rare green and black roses.",
     highlight: "Awarded 'Garden of Excellence' by World Federation of Rose Societies",
     distance: "2 km from Ooty Bus Stand"
@@ -658,7 +660,7 @@ export const OOTY_DESTINATIONS = [
     subtitle: "Sacred Nilgiri River & Speedboat Thrills",
     category: "Waterfalls & Lakes",
     timing: "9:30 AM – 5:30 PM",
-    image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/17/Pykara_waterfalls.jpg",
     description: "Considered holy by the indigenous Toda community, the Pykara river cascades down stepped rocks before opening into a sparkling lake framed by shola forests. Famous for fast speedboats.",
     highlight: "High-speed boating amidst virgin shola forests",
     distance: "21 km from Ooty on Mysore Road"
@@ -669,7 +671,7 @@ export const OOTY_DESTINATIONS = [
     subtitle: "Iconic Film Location & Cinematic Woods",
     category: "Forest & Scenic",
     timing: "8:00 AM – 6:00 PM",
-    image: "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Pine_Forest_in_Ooty.jpg",
     description: "A mesmerizing expanse of towering pine trees planted during the British era sloping down towards the Kamaraj Sagar Lake. Featured in hundreds of classic Indian movies for its ethereal mist.",
     highlight: "Dreamy cinematic walk and photography haven",
     distance: "14 km from Ooty"
@@ -680,7 +682,7 @@ export const OOTY_DESTINATIONS = [
     subtitle: "Aroma of Freshly Crushed Tea Leaves",
     category: "Heritage & Plantations",
     timing: "9:00 AM – 6:30 PM",
-    image: "https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=800&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Coonoor_landscape_tea_plantations_and_forest.jpg",
     description: "Walk between emerald green tea bushes, learn CTC and orthodox tea processing inside a working factory, and taste aromatic cardamom, chocolate, and white teas right at the factory outlet.",
     highlight: "Live tea processing demonstration and direct factory shopping",
     distance: "4 km from Doddabetta Junction"
@@ -691,7 +693,7 @@ export const OOTY_DESTINATIONS = [
     subtitle: "Quaint Hill Station & Catherine Falls View",
     category: "Day Excursion",
     timing: "Open All Day",
-    image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=800&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/8a/The_Nilgiri_Mountain_Railway.jpg",
     description: "Just 19 km from Ooty, Coonoor boasts a slightly milder climate, Sim's Park with century-old trees, Lamb's Rock, and Dolphin's Nose providing jaw-dropping views of Catherine Falls.",
     highlight: "Heritage Toy Train journey and panoramic cliff viewpoints",
     distance: "19 km from Ooty (accessible via Toy Train or Road)"
@@ -704,7 +706,7 @@ export const SERVICES_LIST = [
     title: "Hotel & Resort Bookings",
     icon: "Hotel",
     shortDesc: "Handpicked luxury resorts, heritage tea estate bungalows, and budget-friendly family hotels with best price guarantee.",
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/40/Fernhills_Palace%2C_Ooty.JPG",
     link: "/hotels",
     features: ["Tea estate stays", "Fireplace cottages", "Complimentary breakfast", "Instant WhatsApp confirmation"]
   },
@@ -713,7 +715,7 @@ export const SERVICES_LIST = [
     title: "Cab & Taxi Services",
     icon: "Car",
     shortDesc: "Clean, reliable cabs with courteous Nilgiri hill drivers. Hatchbacks, Sedans, Innovas, and Tempo Travellers for local and outstation.",
-    image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Toyota_Innova.jpg",
     link: "/cabs",
     features: ["Verified hill drivers", "Sanitized fleet", "Airport/station transfers", "Zero hidden charges"]
   },
@@ -722,7 +724,7 @@ export const SERVICES_LIST = [
     title: "Ooty Sightseeing Trips",
     icon: "Compass",
     shortDesc: "Curated day tours covering Ooty town, Coonoor heritage, Pykara lakes, and Doddabetta summits with zero hassle.",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/8a/The_Nilgiri_Mountain_Railway.jpg",
     link: "/sightseeing",
     features: ["Customized route planning", "Flexible timings", "Local shopping guidance", "Telescope & boat assistance"]
   },
@@ -731,7 +733,7 @@ export const SERVICES_LIST = [
     title: "Family Tour Packages",
     icon: "Users",
     shortDesc: "Carefully designed vacations for families with kids and seniors. Spacious stays, leisure pace, toy train rides, and safari.",
-    image: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/52/Ooty_Lake_Boating.jpg",
     link: "/packages?category=Family%20Packages",
     features: ["Kid-friendly activities", "Private SUVs", "Safe and relaxed itinerary", "Dedicated trip coordinator"]
   },
@@ -740,7 +742,7 @@ export const SERVICES_LIST = [
     title: "Couple & Honeymoon Packages",
     icon: "Heart",
     shortDesc: "Unforgettable romantic getaways featuring candle-lit dinners, cozy fireplace suites, flower bed décor, and private viewpoints.",
-    image: "https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=800&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Government_Rose_Garden%2C_Ooty%2C_Tamil_Nadu%2C_India.jpg",
     link: "/packages?category=Couple%20Packages",
     features: ["Honeymoon cake & decor", "Candle-light dinner", "Valley view suites", "Romantic photo spots"]
   },
@@ -749,7 +751,7 @@ export const SERVICES_LIST = [
     title: "Customized Holiday Packages",
     icon: "Sparkles",
     shortDesc: "Your trip, your way. Tell us your dates and dreams, and our Ooty travel architects will build the perfect holiday itinerary.",
-    image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Nilgiri_Hills.jpg",
     link: "/booking",
     features: ["Tailored durations", "Choice of properties", "Outstation extensions", "Direct WhatsApp curation"]
   }
